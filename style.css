@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: beige;
+}
+
+H1{
+    text-align: center;
+    color: blue;
+}
+
+footer {
+    color: beige;
+}
