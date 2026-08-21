@@ -1,0 +1,80 @@
+20/08/2026
+
+=============== Comandos GIT ===================
+
+Criar nova branch:
+# 1. git checkout -b nome-da-branch   ou    git switch -c nome-da-branch
+
+# 2. Fazer o primeiro push com a nova branch:
+git push -u origin nome-da-branch
+
+# 1. Mude para outra branch (ex: main ou master)
+git switch main   # ou: git checkout main
+
+# 2. Agora sim, delete a branch desejada
+git branch -D exercicios_18_04
+
+
+Tipos Comuns de Prefixos para branchs:
+
+feat/ Para uma nova função ou recurso no sistema.fix/ Para consertar um erro ou bug.
+chore/ Para tarefas de manutenção ou ajustes de rotina.
+docs/ Para mudar apenas a documentação.
+refactor/ Para mudar o código sem alterar a função.
+
+
+iniciar uma área de trabalho (veja também: git help tutorial)
+   clone     Clonar um repositório em um novo diretório
+   init      Criar um repositório Git vazio ou reinicializar um existente
+
+trabalhar na mudança atual (veja também: git help everyday)
+   add       Adicionar o conteúdo dos arquivos ao índice (staging area)
+   mv        Mover ou renomear um arquivo, um diretório ou um link simbólico
+   restore   Restaurar arquivos da árvore de trabalho
+   rm        Remover arquivos da árvore de trabalho e do índice
+
+examinar o histórico e o estado (veja também: git help revisions)
+   bisect    Usar busca binária para encontrar o commit que introduziu um bug
+   diff      Mostrar mudanças entre commits, entre commit e árvore de trabalho, etc.
+   grep      Imprimir linhas que correspondem a um padrão
+   log       Mostrar registros de commits
+   show      Mostrar vários tipos de objetos
+   status    Mostrar o status da árvore de trabalho
+
+expandir, marcar e ajustar seu histórico comum
+   branch    Listar, criar ou excluir branches
+   commit    Registrar alterações no repositório
+   merge     Unir dois ou mais históricos de desenvolvimento
+   rebase    Reaplicar commits sobre outra base (ponta de branch)
+   reset     Redefinir o HEAD atual para o estado especificado
+   switch    Alternar entre branches
+   tag       Criar, listar, excluir ou verificar um objeto de tag assinado com GPG
+
+colaborar (veja também: git help workflows)
+   fetch     Baixar objetos e referências de outro repositório
+   pull      Buscar e integrar de outro repositório ou branch local
+   push      Atualizar referências remotas junto com os objetos associados
+
+
+Os guias de conceitos do Git são:
+   attributes          Definindo atributos por caminho
+   cli                 Interface de linha de comando do Git e convenções
+   core-tutorial       Um tutorial sobre o núcleo do Git para desenvolvedores
+   credentials         Fornecendo nomes de usuário e senhas ao Git
+   cvs-migration       Git para usuários de CVS
+   diffcore            Ajustando a saída do diff
+   everyday            Um conjunto mínimo útil de comandos para o Git no dia a dia
+   faq                 Perguntas frequentes sobre o uso do Git
+   glossary            Um glossário do Git
+   hooks               Hooks (ganchos) utilizados pelo Git
+   ignore              Especificando arquivos a serem ignorados intencionalmente (não rastreados)
+   mailmap             Mapeando nomes de autor/committer e/ou endereços de e-mail
+   modules             Definindo propriedades de submódulos
+   namespaces          Namespaces (espaços de nomes) do Git
+   remote-helpers      Programas auxiliares para interagir com repositórios remotos
+   repository-layout   Estrutura do repositório Git
+   revisions           Especificando revisões e intervalos para o Git
+   submodules          Incorporando um repositório dentro de outro
+   tutorial            Uma introdução tutorial ao Git
+   tutorial-2          Uma introdução tutorial ao Git: parte dois
+   workflows           Uma visão geral dos fluxos de trabalho recomendados com Git
