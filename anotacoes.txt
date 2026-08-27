@@ -78,3 +78,7 @@ Os guias de conceitos do Git são:
    tutorial            Uma introdução tutorial ao Git
    tutorial-2          Uma introdução tutorial ao Git: parte dois
    workflows           Uma visão geral dos fluxos de trabalho recomendados com Git
+
+   git fetch --prune - atualiza as referências do repositório remoto e remove do seu
+   computador as referências de branches locais que já foram excluídas no servidor
+   remoto (como no GitHub ou GitLab), mantendo sua lista de rastreamento limpa e organizada
