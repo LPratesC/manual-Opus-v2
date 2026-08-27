@@ -1,0 +1,637 @@
+/* ============================================
+   RESET E BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ============================================
+   HEADER COM BUSCA
+   ============================================ */
+.header-manual {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: #ffffff;
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-conteudo {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-titulo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.busca-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.campo-busca {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1e3a8a;
+    transition: all 0.3s ease;
+}
+
+.campo-busca:focus {
+    outline: none;
+    width: 350px;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.campo-busca::placeholder {
+    color: #6b7280;
+}
+
+.btn-busca {
+    padding: 10px 16px;
+    background: #ffffff;
+    color: #1e3a8a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn-busca:hover {
+    background: #f0f9ff;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   CONTAINER PRINCIPAL
+   ============================================ */
+.container-principal {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    gap: 30px;
+}
+
+/* ============================================
+   SUMÁRIO LATERAL
+   ============================================ */
+.sumario-lateral {
+    width: 280px;
+    flex-shrink: 0;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08),
+                0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e5e7eb;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+}
+
+.sumario-titulo {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.sumario-navegacao {
+    margin-bottom: 20px;
+}
+
+.sumario-lista {
+    list-style: none;
+}
+
+.sumario-lista li {
+    margin-bottom: 8px;
+}
+
+.sumario-link {
+    display: block;
+    padding: 10px 14px;
+    color: #4b5563;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sumario-link:hover {
+    background: #f0f9ff;
+    color: #1e3a8a;
+    border-left-color: #3b82f6;
+    padding-left: 18px;
+}
+
+.sumario-link.ativo {
+    background: #dbeafe;
+    color: #1e3a8a;
+    border-left-color: #1e3a8a;
+    font-weight: 600;
+}
+
+.sumario-sublista {
+    list-style: none;
+    margin-top: 6px;
+    padding-left: 20px;
+}
+
+.sumario-sublista .sumario-link {
+    font-size: 13px;
+    padding: 8px 12px;
+}
+
+.sumario-resultado-busca {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    display: none;
+}
+
+.sumario-resultado-busca.ativo {
+    display: block;
+}
+
+.resultado-titulo {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.resultado-item {
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    background: #f9fafb;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.resultado-item:hover {
+    background: #dbeafe;
+    color: #1e3a8a;
+}
+
+/* ============================================
+   CONTEÚDO PRINCIPAL
+   ============================================ */
+.conteudo-manual {
+    flex: 1;
+    min-width: 0;
+}
+
+.secao-manual {
+    margin-bottom: 30px;
+    scroll-margin-top: 100px;
+}
+
+.conteudo-secao {
+    color: #374151;
+}
+
+.conteudo-secao p {
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.conteudo-secao h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin: 20px 0 12px 0;
+}
+
+.conteudo-secao ul,
+.conteudo-secao ol {
+    margin: 12px 0 12px 24px;
+}
+
+.conteudo-secao li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Info Box */
+.info-box {
+    background: #f0f9ff;
+    border-left: 4px solid #3b82f6;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+}
+
+.info-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* Passo de Instalação */
+.passo-instalacao {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+}
+
+.passo-instalacao h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* FAQ Item */
+.faq-item {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #1e3a8a;
+}
+
+.faq-item p {
+    margin: 0;
+    color: #4b5563;
+}
+
+/* ============================================
+   CARTÃO NOVO (mantido do CSS anterior)
+   ============================================ */
+.cartao-novo {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08),
+                0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e5e7eb;
+}
+
+.cartao-novo > .titulo {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    letter-spacing: 0.3px;
+}
+
+/* ============================================
+   INFO (mantido do CSS anterior)
+   ============================================ */
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.info > .cabecalho {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+.info > .conteudo {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+/* ============================================
+   EMBLEMAS (mantido do CSS anterior)
+   ============================================ */
+.emblema {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #dcdcdc;
+    color: #000000;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.emblema-atencao {
+    background: #e07934;
+    color: #ffffff;
+}
+
+.emblema-sucesso {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.emblema-erro {
+    background: #dc143c;
+    color: #ffffff;
+}
+
+.emblema-processando {
+    background: #6ea8fe;
+    color: #1e3a8a;
+}
+
+/* ============================================
+   OBSERVAÇÃO (mantido do CSS anterior)
+   ============================================ */
+.observacao {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: #f9fafb;
+    border-left: 4px solid #1e3a8a;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.observacao strong {
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+/* ============================================
+   TABELA (mantido do CSS anterior)
+   ============================================ */
+.tabela {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.tabela .cabecalho th {
+    background: #1e3a8a;
+    color: #ffffff;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tabela .cabecalho th:first-child {
+    border-radius: 8px 0 0 0;
+}
+
+.tabela .cabecalho th:last-child {
+    border-radius: 0 8px 0 0;
+}
+
+.tabela .conteudo td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+    vertical-align: middle;
+}
+
+.tabela .conteudo tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.tabela .conteudo tr:hover {
+    background: #fff7ed;
+}
+
+/* ============================================
+   BOTÃO VOLTAR AO INÍCIO
+   ============================================ */
+.voltar-inicio-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-voltar-inicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.btn-voltar-inicio:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.4);
+}
+
+.btn-voltar-inicio span {
+    font-size: 18px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer-manual {
+    background: #1e3a8a;
+    color: #ffffff;
+    text-align: center;
+    padding: 24px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.footer-manual p {
+    margin: 4px 0;
+    font-size: 13px;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+@media (max-width: 1024px) {
+    .container-principal {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .sumario-lateral {
+        width: 100%;
+        position: static;
+        max-height: none;
+    }
+
+    .campo-busca {
+        width: 200px;
+    }
+
+    .campo-busca:focus {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .busca-container {
+        width: 100%;
+    }
+
+    .campo-busca {
+        flex: 1;
+        width: 100%;
+    }
+
+    .campo-busca:focus {
+        width: 100%;
+    }
+
+    .secao-manual {
+        scroll-margin-top: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cartao-novo {
+        padding: 14px 16px;
+    }
+
+    .sumario-lateral {
+        padding: 16px;
+    }
+
+    .btn-voltar-inicio {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+@keyframes highlight {
+    0% { background-color: #fef3c7; }
+    100% { background-color: transparent; }
+}
+
+.secao-manual.highlight {
+    animation: highlight 1s ease;
+}
+
+/* Highlight de busca */
+.busca-highlight {
+    background-color: #fef3c7;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Destaque visual temporário na seção encontrada */
+.secao-manual.highlight {
+    animation: highlight-fade 2s ease-out;
+    scroll-margin-top: 80px; /* Garante que o header fixo não cubra o título */
+}
+
+@keyframes highlight-fade {
+    0% { background-color: rgba(255, 235, 59, 0.4); }
+    100% { background-color: transparent; }
+}
+
+/* Estilo da caixa de resultados da busca no sumário */
+.sumario-resultado-busca {
+    display: none;
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.sumario-resultado-busca.ativo {
+    display: block;
+}
+
+.resultado-titulo {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.resultado-item {
+    padding: 8px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.2s, transform 0.1s;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.resultado-item:hover {
+    background: #e2e6ea;
+    transform: translateX(3px);
+}
+
+.resultado-item:last-child {
+    border-bottom: none;
+}
+
+.resultado-item small {
+    color: #0d6efd;
+    font-weight: 500;
+}

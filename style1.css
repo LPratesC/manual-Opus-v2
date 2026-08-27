@@ -1,0 +1,214 @@
+/* ============================================
+   RESET E BASE
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    color: #333;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ============================================
+   CARTÃO NOVO (container principal)
+   ============================================ */
+.cartao-novo {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08),
+                0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e5e7eb;
+}
+
+/* ============================================
+   TÍTULO DO CARTÃO
+   ============================================ */
+.cartao-novo > .titulo {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    letter-spacing: 0.3px;
+}
+
+/* ============================================
+   CONTEÚDO EM GRID (4 colunas)
+   ============================================ */
+.cartao-novo > .conteudo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 24px;
+    padding: 4px 0;
+}
+
+/* ============================================
+   BLOCO DE INFORMAÇÃO
+   ============================================ */
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Label / Cabeçalho do campo */
+.info > .cabecalho {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+/* Valor / Conteúdo do campo */
+.info > .conteudo {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+/* ============================================
+   EMBLEMAS (badges de status)
+   ============================================ */
+.emblema {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #dcdcdc;
+    color: #000000;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.emblema-atencao {
+    background: #e07934;
+    color: #ffffff;
+}
+
+.emblema-sucesso {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.emblema-erro {
+    background: #dc143c;
+    color: #ffffff;
+}
+
+.emblema-processando {
+    background: #6ea8fe;
+    color: #1e3a8a;
+}
+
+/* ============================================
+   OBSERVAÇÃO (caixa com borda azul)
+   ============================================ */
+.observacao {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: #f9fafb;
+    border-left: 4px solid #1e3a8a;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.observacao strong {
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+/* ============================================
+   TABELA
+   ============================================ */
+.tabela {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.tabela .cabecalho th {
+    background: #1e3a8a;
+    color: #ffffff;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tabela .cabecalho th:first-child {
+    border-radius: 8px 0 0 0;
+}
+
+.tabela .cabecalho th:last-child {
+    border-radius: 0 8px 0 0;
+}
+
+.tabela .conteudo td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+    vertical-align: middle;
+}
+
+.tabela .conteudo tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.tabela .conteudo tr:hover {
+    background: #fff7ed;
+}
+
+/* ============================================
+   ALINHAMENTOS UTILITÁRIOS
+   ============================================ */
+.texto-direita {
+    text-align: right;
+}
+
+.texto-centro {
+    text-align: center;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+@media (max-width: 1024px) {
+    .cartao-novo > .conteudo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cartao-novo > .conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .cartao-novo {
+        padding: 14px 16px;
+    }
+}

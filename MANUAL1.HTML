@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Opuscase</title>
+    <link rel="stylesheet" href="STYLE2.CSS">
+</head>
+<body>
+    <!-- Header com Busca -->
+    <header class="header-manual">
+        <div class="header-conteudo">
+            <h1 class="header-titulo">Manual Opuscase</h1>
+            <div class="busca-container">
+                <input type="text" id="campoBusca" class="campo-busca" placeholder="Buscar no manual...">
+                <button id="btnBusca" class="btn-busca">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Container Principal -->
+    <div class="container-principal">
+        <!-- Sumário Lateral -->
+        <aside class="sumario-lateral">
+            <h2 class="sumario-titulo">Sumário</h2>
+            <nav class="sumario-navegacao">
+                <ul class="sumario-lista">
+                    <li><a href="#introducao" class="sumario-link ativo">1. Introdução</a></li>
+                    <li><a href="#instalacao" class="sumario-link">2. Instalação</a></li>
+                    <li><a href="#configuracao" class="sumario-link">3. Configuração</a></li>
+                    <li><a href="#modulos" class="sumario-link">4. Módulos</a>
+                        <ul class="sumario-sublista">
+                            <li><a href="#modulo-acordos" class="sumario-link">4.1. Acordos</a></li>
+                            <li><a href="#modulo-clientes" class="sumario-link">4.2. Clientes</a></li>
+                            <li><a href="#modulo-produtos" class="sumario-link">4.3. Produtos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#relatorios" class="sumario-link">5. Relatórios</a></li>
+                    <li><a href="#suporte" class="sumario-link">6. Suporte Técnico</a></li>
+                    <li><a href="#faq" class="sumario-link">7. FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="sumario-resultado-busca" id="resultadoBusca"></div>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="conteudo-manual">
+            <!-- Seção 1: Introdução -->
+            <section id="introducao" class="secao-manual">
+                <div class="cartao-novo">
+                    <div class="titulo">1. Introdução</div>
+                    <div class="conteudo-secao">
+                        <p>Bem-vindo ao Manual Opuscase! Este sistema foi desenvolvido para facilitar a gestão de acordos comerciais, clientes e produtos de forma integrada e eficiente.</p>
+                        <p>Neste manual, você encontrará informações detalhadas sobre todas as funcionalidades do sistema, desde a instalação até as operações mais avançadas.</p>
+                        
+                        <div class="info-box">
+                            <h3>Objetivos do Sistema</h3>
+                            <ul>
+                                <li>Gerenciamento completo de acordos comerciais</li>
+                                <li>Controle de clientes e CNPJs</li>
+                                <li>Cadastro e acompanhamento de produtos</li>
+                                <li>Geração de relatórios personalizados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 2: Instalação -->
+            <section id="instalacao" class="secao-manual">
+                <div class="cartao-novo">
+                    <div class="titulo">2. Instalação</div>
+                    <div class="conteudo-secao">
+                        <p>Para instalar o Opuscase em seu ambiente, siga os passos abaixo:</p>
+                        
+                        <div class="passo-instalacao">
+                            <h3>Pré-requisitos</h3>
+                            <ul>
+                                <li>Servidor com PHP 7.4 ou superior</li>
+                                <li>MySQL 5.7 ou superior</li>
+                                <li>2GB de RAM disponível</li>
+                                <li>10GB de espaço em disco</li>
+                            </ul>
+                        </div>
+
+                        <div class="passo-instalacao">
+                            <h3>Passo a Passo</h3>
+                            <ol>
+                                <li>Baixe o pacote de instalação</li>
+                                <li>Extraia os arquivos no diretório do servidor</li>
+                                <li>Crie o banco de dados MySQL</li>
+                                <li>Configure o arquivo config.php</li>
+                                <li>Acesse o instalador via navegador</li>
+                                <li>Siga as instruções na tela</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 3: Configuração -->
+            <section id="configuracao" class="secao-manual">
+                <div class="cartao-novo">
+                    <div class="titulo">3. Configuração</div>
+                    <div class="conteudo-secao">
+                        <p>Após a instalação, é necessário configurar o sistema conforme as necessidades da sua empresa.</p>
+                        
+                        <div class="info">
+                            <label class="cabecalho">Configurações Iniciais</label>
+                            <span class="conteudo">Acesse o menu Configurações > Gerais para definir parâmetros como nome da empresa, CNPJ, endereço e demais dados cadastrais.</span>
+                        </div>
+
+                        <div class="info">
+                            <label class="cabecalho">Permissões de Usuário</label>
+                            <span class="conteudo">Configure os níveis de acesso para cada usuário do sistema através do menu Administração > Usuários.</span>
+                        </div>
+
+                        <div class="info">
+                            <label class="cabecalho">Integrações</label>
+                            <span class="conteudo">O sistema permite integração com ERPs, sistemas de nota fiscal eletrônica e outras plataformas.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 4: Módulos -->
+            <section id="modulos" class="secao-manual">
+                <div class="cartao-novo">
+                    <div class="titulo">4. Módulos do Sistema</div>
+                    <div class="conteudo-secao">
+                        <p>O Opuscase é dividido em módulos funcionais que podem ser ativados conforme a necessidade.</p>
+                    </div>
+                </div>
+
+                <!-- Subseção 4.1: Acordos -->
+                <section id="modulo-acordos" class="secao-manual">
+                    <div class="cartao-novo">
+                        <div class="titulo">4.1. Módulo de Acordos</div>
+                        <div class="conteudo-secao">
+                            <p>O módulo de acordos permite o gerenciamento completo de negociações comerciais.</p>
+                            
+                            <div class="info">
+                                <label class="cabecalho">Nº Acordo</label>
+                                <span class="conteudo">Cada acordo recebe um número único sequencial para identificação.</span>
+                            </div>
+
+                            <div class="info">
+                                <label class="cabecalho">Divisão Produto</label>
+                                <span class="conteudo">Classificação dos produtos envolvidos no acordo.</span>
+                            </div>
+
+                            <div class="info">
+                                <label class="cabecalho">Status Atual</label>
+                                <span class="conteudo">
+                                    <span class="emblema emblema-atencao">Ag. Aprovação</span>
+                                    <span class="emblema emblema-sucesso" style="margin-left: 8px;">Aprovado</span>
+                                </span>
+                            </div>
+
+                            <div class="observacao">
+                                <strong>Observação:</strong> Todos os acordos passam por um fluxo de aprovação antes de serem finalizados.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Subseção 4.2: Clientes -->
+                <section id="modulo-clientes" class="secao-manual">
+                    <div class="cartao-novo">
+                        <div class="titulo">4.2. Módulo de Clientes</div>
+                        <div class="conteudo-secao">
+                            <p>Cadastro e gerenciamento de clientes do sistema.</p>
+                            
+                            <table class="tabela">
+                                <thead class="cabecalho">
+                                    <tr>
+                                        <th>Cliente</th>
+                                        <th>CNPJ</th>
+                                        <th>Grupo</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="conteudo">
+                                    <tr>
+                                        <td>VINCAO SORRISO DE MARILIA LTDA</td>
+                                        <td>10.543.116/0001-03</td>
+                                        <td>000202 DULIN</td>
+                                        <td><span class="emblema emblema-sucesso">Ativo</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>PORTO DE REGISTRO TRANSPORTES LTDA</td>
+                                        <td>21.966.029/0001-00</td>
+                                        <td>000202 DULIN</td>
+                                        <td><span class="emblema emblema-sucesso">Ativo</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Subseção 4.3: Produtos -->
+                <section id="modulo-produtos" class="secao-manual">
+                    <div class="cartao-novo">
+                        <div class="titulo">4.3. Módulo de Produtos</div>
+                        <div class="conteudo-secao">
+                            <p>Cadastro e controle de produtos e serviços.</p>
+                            
+                            <table class="tabela">
+                                <thead class="cabecalho">
+                                    <tr>
+                                        <th>Seq.</th>
+                                        <th>Cod. Int.</th>
+                                        <th>Produto</th>
+                                        <th>Qtd.</th>
+                                        <th>Preço Acordado</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="conteudo">
+                                    <tr>
+                                        <td>0001</td>
+                                        <td>1190078080</td>
+                                        <td>TIM - VIANA</td>
+                                        <td>15</td>
+                                        <td>R$ 746,70</td>
+                                        <td><span class="emblema emblema-atencao">Ag. Aprovação</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>0002</td>
+                                        <td>1190078761</td>
+                                        <td>TIM - VIANA</td>
+                                        <td>20</td>
+                                        <td>R$ 597,64</td>
+                                        <td><span class="emblema emblema-atencao">Ag. Aprovação</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>0003</td>
+                                        <td>1192007212</td>
+                                        <td>TIM - VIANA</td>
+                                        <td>10</td>
+                                        <td>R$ 957,33</td>
+                                        <td><span class="emblema emblema-atencao">Ag. Aprovação</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Seção 5: Relatórios -->
+            <section id="relatorios" class="secao-manual">
+                <div class="cartao-novo">
+                    <div class="titulo">5. Relatórios</div>
+                    <div class="conteudo-secao">
+                        <p>O sistema oferece diversos relatórios para acompanhamento e análise dos dados.</p>
+                        
+                        <div class="info">
+                            <label class="cabecalho">Relatórios Disponíveis</label>
+                            <span class="conteudo">Relatórios de acordos, clientes, produtos, faturamento e desempenho comercial.</span>
+                        </div>
+
+                        <div class="info">
+                            <label class="cabecalho">Exportação</label>
+                            <span class="conteudo">Todos os relatórios podem ser exportados em PDF, Excel ou CSV.</span>
+                        </div>
+
+                        <div class="info">
+                            <label class="cabecalho">Agendamento</label>
+                            <span class="conteudo">Configure o envio automático de relatórios por e-mail em periodicidades definidas.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 6: Suporte Técnico -->
+            <section id="suporte" class="secao-manual">
+                <div class="cartao-novo">
+                    <div class="titulo">6. Suporte Técnico</div>
+                    <div class="conteudo-secao">
+                        <p>Em caso de dúvidas ou problemas, nossa equipe de suporte está à disposição.</p>
+                        
+                        <div class="info">
+                            <label class="cabecalho">Canais de Atendimento</label>
+                            <span class="conteudo">
+                                <strong>E-mail:</strong> suporte@opuscase.com.br<br>
+                                <strong>Telefone:</strong> (11) 4000-1234<br>
+                                <strong>Horário:</strong> Segunda a Sexta, das 8h às 18h
+                            </span>
+                        </div>
+
+                        <div class="info">
+                            <label class="cabecalho">Base de Conhecimento</label>
+                            <span class="conteudo">Acesse nossa base de conhecimento com artigos, tutoriais e FAQ em help.opuscase.com.br</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 7: FAQ -->
+            <section id="faq" class="secao-manual">
+                <div class="cartao-novo">
+                    <div class="titulo">7. FAQ - Perguntas Frequentes</div>
+                    <div class="conteudo-secao">
+                        <div class="faq-item">
+                            <h3>Como recupero minha senha?</h3>
+                            <p>Acesse a tela de login e clique em "Esqueci minha senha". Digite seu e-mail cadastrado e siga as instruções.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>Posso acessar o sistema pelo celular?</h3>
+                            <p>Sim! O Opuscase é responsivo e pode ser acessado por qualquer dispositivo com navegador.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>Como faço backup dos dados?</h3>
+                            <p>O backup é realizado automaticamente diariamente. Para backup manual, acesse Administração > Backup.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>Quantos usuários posso cadastrar?</h3>
+                            <p>O número de usuários depende do plano contratado. Consulte seu contrato ou fale com nosso comercial.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botão Voltar ao Início -->
+            <div class="voltar-inicio-container">
+                <button id="btnVoltarInicio" class="btn-voltar-inicio">
+                    <span>⬆</span> Voltar ao Início
+                </button>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer-manual">
+                <p>&copy; 2026 Opuscase - Todos os direitos reservados</p>
+                <p>Versão 2.0.1 | Última atualização: 28/08/2026</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
