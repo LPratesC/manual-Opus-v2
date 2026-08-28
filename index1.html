@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+    <!-- Define a codificação de caracteres para suportar acentos -->
     <meta charset="UTF-8">
+    <!-- Garante que a página seja responsiva em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual Opuscase</title>
-    <link rel="stylesheet" href="STYLE2.CSS">
+    <link rel="stylesheet" href="style1.css">
 </head>
+
 <body>
-    <!-- Header com Busca -->
+    <!-- ============================================
+         HEADER: Contém o título e a barra de busca.
+         Fica fixo no topo da página (sticky).
+         ============================================ -->
     <header class="header-manual">
         <div class="header-conteudo">
             <h1 class="header-titulo">Manual Opuscase</h1>
             <div class="busca-container">
                 <input type="text" id="campoBusca" class="campo-busca" placeholder="Buscar no manual...">
-                <button id="btnBusca" class="btn-busca">🔍</button>
+                <button id="btnBusca" class="btn-busca" title="Buscar">🔍</button>
             </div>
         </div>
     </header>
 
-    <!-- Container Principal -->
+    <!-- ============================================
+         CONTAINER PRINCIPAL: Agrupa apenas o Sumário e o Conteúdo.
+         O flex: 1 no CSS empurra o footer para o final da tela.
+         ============================================ -->
     <div class="container-principal">
-        <!-- Sumário Lateral -->
+
+        <!-- SUMÁRIO LATERAL: Navegação fixa (sticky) com links de âncora -->
         <aside class="sumario-lateral">
             <h2 class="sumario-titulo">Sumário</h2>
             <nav class="sumario-navegacao">
@@ -29,6 +40,7 @@
                     <li><a href="#instalacao" class="sumario-link">2. Instalação</a></li>
                     <li><a href="#configuracao" class="sumario-link">3. Configuração</a></li>
                     <li><a href="#modulos" class="sumario-link">4. Módulos</a>
+                        <!-- Sublista para módulos aninhados -->
                         <ul class="sumario-sublista">
                             <li><a href="#modulo-acordos" class="sumario-link">4.1. Acordos</a></li>
                             <li><a href="#modulo-clientes" class="sumario-link">4.2. Clientes</a></li>
@@ -40,30 +52,112 @@
                     <li><a href="#faq" class="sumario-link">7. FAQ</a></li>
                 </ul>
             </nav>
+            <!-- Container dinâmico onde os resultados da busca serão injetados via JS -->
             <div class="sumario-resultado-busca" id="resultadoBusca"></div>
         </aside>
 
-        <!-- Conteúdo Principal -->
+        <!-- CONTEÚDO PRINCIPAL: Seções do manual com IDs correspondentes aos links do sumário -->
         <main class="conteudo-manual">
+
             <!-- Seção 1: Introdução -->
             <section id="introducao" class="secao-manual">
                 <div class="cartao-novo">
                     <div class="titulo">1. Introdução</div>
                     <div class="conteudo-secao">
-                        <p>Bem-vindo ao Manual Opuscase! Este sistema foi desenvolvido para facilitar a gestão de acordos comerciais, clientes e produtos de forma integrada e eficiente.</p>
-                        <p>Neste manual, você encontrará informações detalhadas sobre todas as funcionalidades do sistema, desde a instalação até as operações mais avançadas.</p>
-                        
+                        <p>Bem-vindo ao Manual Opuscase! Este Manual destina-se a orientar o programador/analista de
+                            sistemas que irá utilizar o OPUScase para a
+                            geração de rotinas. Para melhor aproveitamento do conteúdo do manual. recomendas-se observar
+                            primeiramente os
+                            itens abaixo:</p>
+                        <ul>
+                            <li>Quem deve usar este manual?</li>
+                            <li>Pré-Requisitos</li>
+                            <li>Como interpretar a tela de uma rotina</li>
+                            <li>Terminais suportados pelo sistema</li>
+                            <li>Como funciona o teclado</li>
+                            <li>Como ler os diagramas de sintaxe</li>
+                        </ul>
+
+
                         <div class="info-box">
-                            <h3>Objetivos do Sistema</h3>
+                            <h3>1.1 Introdução ao OPUScase</h3>
+                            <p>O OPUScase é um produto do tipo I-CASE (Integrated Computer Aided Engeneering).
+                                Permite aos profissionais de informática desenhar e gerar aplicações de forma rápida.
+                                fácil. segura. livre de erros de sintaxe e auto-documentada. possibilitando desta
+                                maneira uma maior
+                                produtividade no desenvolvimento de sistemas computorizados.
+                                O OPUS case é composto de:</p>
                             <ul>
-                                <li>Gerenciamento completo de acordos comerciais</li>
-                                <li>Controle de clientes e CNPJs</li>
-                                <li>Cadastro e acompanhamento de produtos</li>
-                                <li>Geração de relatórios personalizados</li>
+                                <li>Dicionário de Dados</li>
+                                <li>Editor de Telas de Entrada/Saída</li>
+                                <li>Linguagem 4GL em português</li>
+                                <li>Gerador de Rotinas em linguagem C</li>
+                                <li>Gerenciador de Bando de Dados</li>
+                                <li>Documentador de Manuais</li>
                             </ul>
                         </div>
-                    </div>
-                </div>
+                        <div class="info-box">
+                            <h3>1.2 Quem deve usar este manual</h3>
+                            <P>Este manual deve ser utilizado pelo pessoal técnico que irá desenvolver rotinas atravavés
+                                do OPUScase.servindo como fonte de consulta para dirimir eventuais duvidas que venham
+                                surgir na utilização do sistema. É um complemento do manual de usuário onde você irá encontrar as
+                                definições que o OPUScase utiliza. Eventuais duvidas poderão ser eliminadas através da utilização dos exemplos contidos no
+                                Manual "O ABC do OPUScase".</P>
+                        </div>
+                        <div class="info-box">
+                            <h3>1.3 Pré-Requisitos</h3>
+                            <P>Para desenvolver rotinas em OPUScase, apesar de ser fácil c simples, é recomendável que
+                                você tenha o conhecimento dos seguintes assuntos:</P>
+                            <ul>
+                                <li>Conhecimento de Análise Orientada por Objetos</li>
+                                <li>Funções Básicas de Unix,</li>
+                                <li>Programação em linguagem "C".</li>
+                            </ul>
+                        </div>
+
+                        <div class="titulo">
+                            <h3>1.4 Como Interpretar a tela de uma rotina</h3>
+                            <p>As rotina geradas pelo OPUScase seguem a padronização SAA-CUA (System Architeture
+                                Application - Common Users Acess). assim todas elas obedecem as definições abaixo:</p>
+                            
+
+                            <!-- EXEMPLO 1: Imagem Padrão (Média, até 600px, centralizada) -->
+                            <figure style="text-align: center; margin: 24px 0;">
+                                <div class="moldura-imagem img-md">
+                                    <img src="./img/OPUS.png" alt="Tela inicial do sistema Opuscase">
+                                </div>
+                                <figcaption class="legenda-imagem">Figura 1: Tela inicial do sistema Opuscase
+                                </figcaption>
+                            </figure>
+
+                            <!-- EXEMPLO 2: Imagem Pequena (para detalhes ou ícones, até 300px) -->
+                            <figure style="text-align: center; margin: 24px 0;">
+                                <div class="moldura-imagem img-sm">
+                                    <img src="./img/OPUS.png" alt="Botão de salvar">
+                                </div>
+                                <figcaption class="legenda-imagem">Figura 2: Detalhe do botão de salvar</figcaption>
+                            </figure>
+
+                            <!-- EXEMPLO 3: Galeria com duas imagens lado a lado -->
+                            <div class="galeria-imagens">
+                                <figure>
+                                    <div class="moldura-imagem">
+                                        <img src="./img/OPUS.png" alt="Tela de cadastro">
+                                    </div>
+                                    <figcaption class="legenda-imagem">Figura 3: Tela de cadastro</figcaption>
+                                </figure>
+
+                                <figure>
+                                    <div class="moldura-imagem">
+                                        <img src="./img/OPUS.png" alt="Tela de relatórios">
+                                    </div>
+                                    <figcaption class="legenda-imagem">Figura 4: Tela de relatórios</figcaption>
+                                </figure>
+                            </div>
+
+
+                        </div>
+
             </section>
 
             <!-- Seção 2: Instalação -->
@@ -72,7 +166,6 @@
                     <div class="titulo">2. Instalação</div>
                     <div class="conteudo-secao">
                         <p>Para instalar o Opuscase em seu ambiente, siga os passos abaixo:</p>
-                        
                         <div class="passo-instalacao">
                             <h3>Pré-requisitos</h3>
                             <ul>
@@ -82,7 +175,6 @@
                                 <li>10GB de espaço em disco</li>
                             </ul>
                         </div>
-
                         <div class="passo-instalacao">
                             <h3>Passo a Passo</h3>
                             <ol>
@@ -103,21 +195,25 @@
                 <div class="cartao-novo">
                     <div class="titulo">3. Configuração</div>
                     <div class="conteudo-secao">
-                        <p>Após a instalação, é necessário configurar o sistema conforme as necessidades da sua empresa.</p>
-                        
+                        <p>Após a instalação, é necessário configurar o sistema conforme as necessidades da sua empresa.
+                        </p>
+
                         <div class="info">
                             <label class="cabecalho">Configurações Iniciais</label>
-                            <span class="conteudo">Acesse o menu Configurações > Gerais para definir parâmetros como nome da empresa, CNPJ, endereço e demais dados cadastrais.</span>
+                            <span class="conteudo">Acesse o menu Configurações > Gerais para definir parâmetros como
+                                nome da empresa, CNPJ, endereço e demais dados cadastrais.</span>
                         </div>
 
                         <div class="info">
                             <label class="cabecalho">Permissões de Usuário</label>
-                            <span class="conteudo">Configure os níveis de acesso para cada usuário do sistema através do menu Administração > Usuários.</span>
+                            <span class="conteudo">Configure os níveis de acesso para cada usuário do sistema através do
+                                menu Administração > Usuários.</span>
                         </div>
 
                         <div class="info">
                             <label class="cabecalho">Integrações</label>
-                            <span class="conteudo">O sistema permite integração com ERPs, sistemas de nota fiscal eletrônica e outras plataformas.</span>
+                            <span class="conteudo">O sistema permite integração com ERPs, sistemas de nota fiscal
+                                eletrônica e outras plataformas.</span>
                         </div>
                     </div>
                 </div>
@@ -128,7 +224,8 @@
                 <div class="cartao-novo">
                     <div class="titulo">4. Módulos do Sistema</div>
                     <div class="conteudo-secao">
-                        <p>O Opuscase é dividido em módulos funcionais que podem ser ativados conforme a necessidade.</p>
+                        <p>O Opuscase é dividido em módulos funcionais que podem ser ativados conforme a necessidade.
+                        </p>
                     </div>
                 </div>
 
@@ -138,10 +235,11 @@
                         <div class="titulo">4.1. Módulo de Acordos</div>
                         <div class="conteudo-secao">
                             <p>O módulo de acordos permite o gerenciamento completo de negociações comerciais.</p>
-                            
+
                             <div class="info">
                                 <label class="cabecalho">Nº Acordo</label>
-                                <span class="conteudo">Cada acordo recebe um número único sequencial para identificação.</span>
+                                <span class="conteudo">Cada acordo recebe um número único sequencial para
+                                    identificação.</span>
                             </div>
 
                             <div class="info">
@@ -158,7 +256,8 @@
                             </div>
 
                             <div class="observacao">
-                                <strong>Observação:</strong> Todos os acordos passam por um fluxo de aprovação antes de serem finalizados.
+                                <strong>Observação:</strong> Todos os acordos passam por um fluxo de aprovação antes de
+                                serem finalizados.
                             </div>
                         </div>
                     </div>
@@ -170,7 +269,7 @@
                         <div class="titulo">4.2. Módulo de Clientes</div>
                         <div class="conteudo-secao">
                             <p>Cadastro e gerenciamento de clientes do sistema.</p>
-                            
+
                             <table class="tabela">
                                 <thead class="cabecalho">
                                     <tr>
@@ -205,7 +304,7 @@
                         <div class="titulo">4.3. Módulo de Produtos</div>
                         <div class="conteudo-secao">
                             <p>Cadastro e controle de produtos e serviços.</p>
-                            
+
                             <table class="tabela">
                                 <thead class="cabecalho">
                                     <tr>
@@ -255,10 +354,11 @@
                     <div class="titulo">5. Relatórios</div>
                     <div class="conteudo-secao">
                         <p>O sistema oferece diversos relatórios para acompanhamento e análise dos dados.</p>
-                        
+
                         <div class="info">
                             <label class="cabecalho">Relatórios Disponíveis</label>
-                            <span class="conteudo">Relatórios de acordos, clientes, produtos, faturamento e desempenho comercial.</span>
+                            <span class="conteudo">Relatórios de acordos, clientes, produtos, faturamento e desempenho
+                                comercial.</span>
                         </div>
 
                         <div class="info">
@@ -268,7 +368,8 @@
 
                         <div class="info">
                             <label class="cabecalho">Agendamento</label>
-                            <span class="conteudo">Configure o envio automático de relatórios por e-mail em periodicidades definidas.</span>
+                            <span class="conteudo">Configure o envio automático de relatórios por e-mail em
+                                periodicidades definidas.</span>
                         </div>
                     </div>
                 </div>
@@ -280,7 +381,7 @@
                     <div class="titulo">6. Suporte Técnico</div>
                     <div class="conteudo-secao">
                         <p>Em caso de dúvidas ou problemas, nossa equipe de suporte está à disposição.</p>
-                        
+
                         <div class="info">
                             <label class="cabecalho">Canais de Atendimento</label>
                             <span class="conteudo">
@@ -292,7 +393,8 @@
 
                         <div class="info">
                             <label class="cabecalho">Base de Conhecimento</label>
-                            <span class="conteudo">Acesse nossa base de conhecimento com artigos, tutoriais e FAQ em help.opuscase.com.br</span>
+                            <span class="conteudo">Acesse nossa base de conhecimento com artigos, tutoriais e FAQ em
+                                help.opuscase.com.br</span>
                         </div>
                     </div>
                 </div>
@@ -305,42 +407,52 @@
                     <div class="conteudo-secao">
                         <div class="faq-item">
                             <h3>Como recupero minha senha?</h3>
-                            <p>Acesse a tela de login e clique em "Esqueci minha senha". Digite seu e-mail cadastrado e siga as instruções.</p>
+                            <p>Acesse a tela de login e clique em "Esqueci minha senha". Digite seu e-mail cadastrado e
+                                siga as instruções.</p>
                         </div>
 
                         <div class="faq-item">
                             <h3>Posso acessar o sistema pelo celular?</h3>
-                            <p>Sim! O Opuscase é responsivo e pode ser acessado por qualquer dispositivo com navegador.</p>
+                            <p>Sim! O Opuscase é responsivo e pode ser acessado por qualquer dispositivo com navegador.
+                            </p>
                         </div>
 
                         <div class="faq-item">
                             <h3>Como faço backup dos dados?</h3>
-                            <p>O backup é realizado automaticamente diariamente. Para backup manual, acesse Administração > Backup.</p>
+                            <p>O backup é realizado automaticamente diariamente. Para backup manual, acesse
+                                Administração > Backup.</p>
                         </div>
 
                         <div class="faq-item">
                             <h3>Quantos usuários posso cadastrar?</h3>
-                            <p>O número de usuários depende do plano contratado. Consulte seu contrato ou fale com nosso comercial.</p>
+                            <p>O número de usuários depende do plano contratado. Consulte seu contrato ou fale com nosso
+                                comercial.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Botão Voltar ao Início -->
+            <!-- Botão Voltar ao Início (Fixo na parte inferior do conteúdo) -->
             <div class="voltar-inicio-container">
                 <button id="btnVoltarInicio" class="btn-voltar-inicio">
                     <span>⬆</span> Voltar ao Início
                 </button>
             </div>
 
-            <!-- Footer -->
-            <footer class="footer-manual">
-                <p>&copy; 2026 Opuscase - Todos os direitos reservados</p>
-                <p>Versão 2.0.1 | Última atualização: 28/08/2026</p>
-            </footer>
         </main>
     </div>
 
-    <script src="script1.js"></script>
+    <!-- ============================================
+         FOOTER: Agora está FORA do container principal.
+         Isso garante que ele ocupe 100% da largura da tela (inteiriço)
+         e fique sempre na parte inferior da página, como é o padrão.
+         ============================================ -->
+    <footer class="footer-manual">
+        <p>&copy; 2026 Opuscase - Todos os direitos reservados</p>
+        <p>Versão 2.0.1 | Última atualização: 28/08/2026</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 /* ============================================
    RESET E BASE
+   Define o comportamento padrão de todos os elementos
    ============================================ */
 * {
     margin: 0;
@@ -7,31 +8,325 @@
     box-sizing: border-box;
 }
 
+html {
+    /* Habilita rolagem suave nativa ao clicar em links de âncora */
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #e9ecef;
     color: #333;
-    padding: 20px;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
+    /* Flex column garante que o footer fique no final da página mesmo com pouco conteúdo */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* ============================================
-   CARTÃO NOVO (container principal)
+   HEADER COM BUSCA
+   Fixo no topo (sticky) com z-index alto para ficar sobre o conteúdo
+   ============================================ */
+.header-manual {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: #ffffff;
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-conteudo {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-titulo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.busca-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.campo-busca {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1e3a8a;
+    transition: all 0.3s ease;
+}
+
+.campo-busca:focus {
+    outline: none;
+    width: 350px;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.campo-busca::placeholder {
+    color: #6b7280;
+}
+
+.btn-busca {
+    padding: 10px 16px;
+    background: #ffffff;
+    color: #1e3a8a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn-busca:hover {
+    background: #f0f9ff;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   CONTAINER PRINCIPAL
+   Usa Flexbox para organizar o Sumário (esquerda) e o Conteúdo (direita)
+   O flex: 1 faz este container crescer e empurrar o footer para o final da tela
+   ============================================ */
+.container-principal {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    gap: 30px;
+    flex: 1; /* Empurra o footer para o final da página */
+    width: 100%;
+}
+
+/* ============================================
+   SUMÁRIO LATERAL
+   Fica fixo na tela durante a rolagem (sticky)
+   ============================================ */
+.sumario-lateral {
+    width: 280px;
+    flex-shrink: 0; /* Impede que o sumário encolha */
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e7e5eb;
+    position: sticky;
+    top: 100px; /* Distância do topo ao rolar, compensando o header */
+    height: fit-content;
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+}
+
+.sumario-titulo {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.sumario-navegacao {
+    margin-bottom: 20px;
+}
+
+.sumario-lista {
+    list-style: none;
+}
+
+.sumario-lista li {
+    margin-bottom: 8px;
+}
+
+.sumario-link {
+    display: block;
+    padding: 10px 14px;
+    color: #4b5563;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sumario-link:hover {
+    background: #f0f9ff;
+    color: #1e3a8a;
+    border-left-color: #3b82f6;
+    padding-left: 18px;
+}
+
+/* Classe adicionada via JS quando a seção está visível na tela */
+.sumario-link.ativo {
+    background: #dbeafe;
+    color: #1e3a8a;
+    border-left-color: #1e3a8a;
+    font-weight: 600;
+}
+
+.sumario-sublista {
+    list-style: none;
+    margin-top: 6px;
+    padding-left: 20px;
+}
+
+.sumario-sublista .sumario-link {
+    font-size: 13px;
+    padding: 8px 12px;
+}
+
+/* Container de resultados da busca (inicialmente oculto) */
+.sumario-resultado-busca {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    display: none;
+}
+
+.sumario-resultado-busca.ativo {
+    display: block;
+}
+
+.resultado-titulo {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.resultado-item {
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    background: #f9fafb;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.resultado-item:hover {
+    background: #dbeafe;
+    color: #1e3a8a;
+}
+
+/* ============================================
+   CONTEÚDO PRINCIPAL
+   Ocupa todo o espaço restante ao lado do sumário
+   ============================================ */
+.conteudo-manual {
+    flex: 1;
+    min-width: 0; /* Previne que o conteúdo estoure o container em telas pequenas */
+}
+
+.secao-manual {
+    margin-bottom: 30px;
+    /* Garante que o título da seção não fique escondido atrás do header fixo ao rolar */
+    scroll-margin-top: 100px;
+}
+
+.conteudo-secao {
+    color: #374151;
+}
+
+.conteudo-secao p {
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.conteudo-secao h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin: 20px 0 12px 0;
+}
+
+.conteudo-secao ul,
+.conteudo-secao ol {
+    margin: 12px 0 12px 24px;
+}
+
+.conteudo-secao li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Info Box (Destaque azul) */
+.info-box {
+    background: #f0f9ff;
+    border-left: 4px solid #3b82f6;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+    
+}
+
+.info-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* Passo de Instalação (Fundo cinza claro) */
+.passo-instalacao {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+}
+
+.passo-instalacao h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* Item do FAQ */
+.faq-item {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #1e3a8a;
+}
+
+.faq-item p {
+    margin: 0;
+    color: #4b5563;
+}
+
+/* ============================================
+   CARTÃO NOVO (Estilo base dos blocos de conteúdo)
    ============================================ */
 .cartao-novo {
     background-color: #ffffff;
     border-radius: 10px;
     padding: 20px 24px;
     margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08),
-                0 2px 8px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
     border: 1px solid #e5e7eb;
 }
 
-/* ============================================
-   TÍTULO DO CARTÃO
-   ============================================ */
 .cartao-novo > .titulo {
     font-size: 16px;
     font-weight: 700;
@@ -43,25 +338,15 @@ body {
 }
 
 /* ============================================
-   CONTEÚDO EM GRID (4 colunas)
-   ============================================ */
-.cartao-novo > .conteudo {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px 24px;
-    padding: 4px 0;
-}
-
-/* ============================================
-   BLOCO DE INFORMAÇÃO
+   INFO (Rótulo e conteúdo em bloco)
    ============================================ */
 .info {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    margin-bottom: 16px;
 }
 
-/* Label / Cabeçalho do campo */
 .info > .cabecalho {
     font-size: 10px;
     font-weight: 700;
@@ -71,7 +356,6 @@ body {
     margin-bottom: 2px;
 }
 
-/* Valor / Conteúdo do campo */
 .info > .conteudo {
     font-size: 14px;
     font-weight: 500;
@@ -81,7 +365,7 @@ body {
 }
 
 /* ============================================
-   EMBLEMAS (badges de status)
+   EMBLEMAS (Badges de status)
    ============================================ */
 .emblema {
     display: inline-block;
@@ -116,7 +400,7 @@ body {
 }
 
 /* ============================================
-   OBSERVAÇÃO (caixa com borda azul)
+   OBSERVAÇÃO (Destaque lateral)
    ============================================ */
 .observacao {
     margin-top: 20px;
@@ -180,35 +464,219 @@ body {
 }
 
 /* ============================================
-   ALINHAMENTOS UTILITÁRIOS
+   BOTÃO VOLTAR AO INÍCIO
    ============================================ */
-.texto-direita {
-    text-align: right;
+.voltar-inicio-container {
+    text-align: center;
+    margin: 40px 0;
 }
 
-.texto-centro {
+.btn-voltar-inicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.btn-voltar-inicio:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(30, 58, 138, 0.4);
+}
+
+.btn-voltar-inicio span {
+    font-size: 18px;
+}
+
+/* ============================================
+   FOOTER (Inteiriço / Largura Total)
+   ============================================ */
+.footer-manual {
+    width: 100%; /* Ocupa toda a largura da tela */
+    background: #1e3a8a;
+    color: #ffffff;
     text-align: center;
+    padding: 24px;
+    margin-top: auto; /* Garante que fique colado no final se houver pouco conteúdo */
+}
+
+.footer-manual p {
+    margin: 4px 0;
+    font-size: 13px;
 }
 
 /* ============================================
    RESPONSIVIDADE
    ============================================ */
 @media (max-width: 1024px) {
-    .cartao-novo > .conteudo {
-        grid-template-columns: repeat(2, 1fr);
+    .container-principal {
+        /* Em telas médias, empilha o sumário acima do conteúdo */
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .sumario-lateral {
+        width: 100%;
+        position: static; /* Remove o sticky em telas menores */
+        max-height: none;
+    }
+
+    .campo-busca {
+        width: 200px;
+    }
+
+    .campo-busca:focus {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .busca-container {
+        width: 100%;
+    }
+
+    .campo-busca {
+        flex: 1;
+        width: 100%;
+    }
+
+    .campo-busca:focus {
+        width: 100%;
+    }
+
+    .secao-manual {
+        scroll-margin-top: 150px; /* Ajuste do offset para header maior em mobile */
     }
 }
 
 @media (max-width: 600px) {
-    .cartao-novo > .conteudo {
-        grid-template-columns: 1fr;
-    }
-
-    body {
-        padding: 10px;
-    }
-
     .cartao-novo {
         padding: 14px 16px;
     }
+
+    .sumario-lateral {
+        padding: 16px;
+    }
+
+    .btn-voltar-inicio {
+        width: 100%;
+        justify-content: center;
+    }
 }
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+/* Animação de destaque amarelo ao encontrar uma seção via busca ou clique */
+@keyframes highlight-fade {
+    0% { background-color: rgba(255, 235, 59, 0.4); }
+    100% { background-color: transparent; }
+}
+
+.secao-manual.highlight {
+    animation: highlight-fade 2s ease-out;
+}
+
+/* Highlight de texto específico dentro da busca (se implementado futuramente) */
+.busca-highlight {
+    background-color: #fef3c7;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+
+/* ============================================
+   PADRONIZAÇÃO DE IMAGENS (MANUAIS E DOCUMENTAÇÃO)
+   Garante que nenhuma imagem estoure o layout e todas tenham estilo uniforme
+   ============================================ */
+
+/* 1. Reset básico para TODAS as imagens dentro do conteúdo */
+.conteudo-secao img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 2. A Moldura (Container da imagem) */
+.moldura-imagem {
+    background-color: #f8fafc; /* Fundo cinza claro (ótimo para imagens com transparência) */
+    border: 1px solid #e2e8f0; /* Borda sutil */
+    border-radius: 8px; /* Cantos arredondados padronizados */
+    overflow: hidden; /* Garante que a imagem respeite os cantos arredondados */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    /* Centraliza a moldura se ela for menor que o container */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Efeito sutil ao passar o mouse */
+.moldura-imagem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.1), 0 4px 6px -2px rgba(30, 58, 138, 0.05);
+    border-color: #3b82f6; /* Destaque azul da marca ao interagir */
+}
+
+/* 3. A Imagem em si (Dentro da moldura) */
+.moldura-imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* 'contain' garante que a imagem inteira apareça sem ser cortada. 
+       Use 'cover' apenas se quiser que a imagem preencha tudo, mesmo cortando bordas. */
+    object-fit: contain; 
+    object-position: center;
+}
+
+/* 4. Classes de Tamanho (Modifiers) - Adicione junto com .moldura-imagem */
+.moldura-imagem.img-sm { max-width: 300px; } /* Pequena (ícones, detalhes) */
+.moldura-imagem.img-md { max-width: 600px; } /* Média (padrão para prints de tela) */
+.moldura-imagem.img-lg { max-width: 100%; }  /* Grande (ocupa toda a largura do texto) */
+
+/* 5. Legenda Padronizada */
+.legenda-imagem {
+    display: block;
+    text-align: center;
+    font-size: 0.875rem; /* 14px */
+    color: #64748b; /* Cinza azulado suave */
+    margin-top: 0.75rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* 6. Galeria (Opcional: para colocar imagens lado a lado) */
+.galeria-imagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+/* Responsividade: Em telas muito pequenas, garante que nada estoure */
+@media (max-width: 640px) {
+    .moldura-imagem.img-sm,
+    .moldura-imagem.img-md {
+        max-width: 100%; /* Em mobile, todas ocupam a largura total disponível */
+    }
+}
+
+figure {
+    text-align: center;
+    margin: 24px 0;
+}
+
