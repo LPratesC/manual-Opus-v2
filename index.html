@@ -1,144 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Boas Vindas</title>
-    
-    <!-- AQUI ESTÁ A CONEXÃO CORRETA COM O CSS -->
+    <title>Manual de Referência - OPUScase</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Fontes do Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- Barra de Progresso de leitura -->
-    <div class="progress-bar">
-        <div class="progress-bar-fill" id="progressBar"></div>
-    </div>
+    <header>
+        <h1>Manual de Referência</h1>
+        <p class="subtitulo">Primeira Edição (Janeiro de 1993)</p>
+        <p>Esta edição aplica-se à Versão 1, Release 0 do Gerador de Aplicativos OPUScase e a todos os releases subseqüentes.</p>
+        <address>
+            <strong>INTERSYSTEMS CONSULTORIA DE SISTEMAS SIC LTDA.</strong><br>
+            Rua Tutoia, 324 - Conj. 03 - Ibirapuera<br>
+            São Paulo - SP
+        </address>
+    </header>
 
-    <!-- Navbar Fixa -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-inner">
-            <a href="#top" class="logo">
-                <span class="logo-mark">📘</span>
-                Manual de Boas Vindas
-            </a>
-            <div class="nav-actions">
-                <a href="#conclusao" class="btn btn-primary">Começar Agora</a>
-            </div>
-        </div>
+    <nav class="sumario">
+        <h2>Índice</h2>
+        <ol>
+            <li><a href="#introducao">1. Introdução</a></li>
+            <li><a href="#dicionario">2. Dicionário de Dados</a></li>
+            <li><a href="#comandos">3. Comandos</a></li>
+            <li><a href="#biblioteca">4. Biblioteca de Funções</a></li>
+            <li><a href="#gerador">5. Gerador de Rotinas</a></li>
+        </ol>
     </nav>
 
-    <!-- Layout Principal (Sidebar + Conteúdo) -->
-    <div class="layout" id="top">
-        
-        <!-- Sidebar / Sumário -->
-        <aside class="sidebar">
-            <div class="sidebar-inner">
-                <div class="sidebar-title">Sumário</div>
-                <ul class="toc">
-                    <li class="toc-item"><a href="#introducao" class="toc-link"><span class="toc-num">01</span>Introdução</a></li>
-                    <li class="toc-item"><a href="#capitulo1" class="toc-link"><span class="toc-num">02</span>Capítulo 1</a></li>
-                    <li class="toc-item"><a href="#capitulo2" class="toc-link"><span class="toc-num">03</span>Capítulo 2</a></li>
-                    <li class="toc-item"><a href="#capitulo3" class="toc-link"><span class="toc-num">04</span>Capítulo 3</a></li>
-                    <li class="toc-item"><a href="#conclusao" class="toc-link"><span class="toc-num">05</span>Conclusão</a></li>
-                </ul>
-            </div>
-        </aside>
+    <main>
+        <section id="introducao">
+            <h2>1. Introdução</h2>
+            <p>Este Manual destina-se a orientar o programador/analista de sistemas que irá utilizar o OPUScase para a geração de rotinas.</p>
 
-        <!-- Conteúdo Principal -->
-        <main class="content">
+            <h3>1.1 Introdução ao OPUScase</h3>
+            <p>O OPUScase é um produto do tipo I-CASE (Integrated Computer Aided Engineering). Permite aos profissionais de informática desenhar e gerar aplicações de forma rápida, fácil, segura, livre de erros de sintaxe e auto-documentada.</p>
+            <p>O OPUScase é composto de:</p>
+            <ul>
+                <li>Dicionário de Dados</li>
+                <li>Editor de Telas de Entrada/Saída</li>
+                <li>Linguagem 4GL em português</li>
+                <li>Gerador de Rotinas em linguagem C</li>
+                <li>Gerenciador de Banco de Dados</li>
+                <li>Documentador de Manuais</li>
+            </ul>
+
+            <h3>1.4 Como Interpretar a tela de uma rotina</h3>
+            <p>As rotinas geradas pelo OPUScase seguem a padronização SAA-CUA. Exemplo de layout:</p>
+            <pre><code>+---------------------------------------------------------------+
+| OPÇÃO  MENU  IDENTIFICA  AJUDA                                |
++---------------------------------------------------------------+
+| PRGID: NOME DA APLICAÇÃO             TTY-DD                   |
+|                                                               |
+|  [ÁREA DE TRABALHO / LAY-OUT DA ROTINA]                       |
+|                                                               |
+|                                                               |
++---------------------------------------------------------------+
+| Mensagem:                                                     |
+| F01=AJUDA  F03=SAÍDA  F10=AÇÃO  F12=ELIMINA                   |
++---------------------------------------------------------------+</code></pre>
+        </section>
+
+        <section id="dicionario">
+            <h2>2. Dicionário de Dados</h2>
+            <p>Dicionário de Dados é o conjunto das definições e especificações dos atributos e entidades, únicos no sistema.</p>
+
+            <h3>2.1 Atributo</h3>
+            <p>Atributo é a designação dada a uma informação determinando o formato e suas consistências.</p>
             
-            <section class="cover reveal">
-                <span class="cover-badge"><span class="cover-badge-dot"></span> Versão 2026</span>
-                <h1>Bem-vindo ao <span class="gradient-text">Manual Oficial</span></h1>
-                <p class="cover-lead">Este guia foi criado para ajudar você a entender todos os processos de forma rápida, visual e eficiente.</p>
-            </section>
+            <h4>Elementos da especificação de um atributo:</h4>
+            <dl>
+                <dt>Banco</dt>
+                <dd>Caractere alfabético identificador do projeto ao qual o atributo está vinculado.</dd>
 
-            <article class="chapter reveal" id="introducao">
-                <div class="chapter-head">
-                    <div class="chapter-num">01</div>
-                    <div>
-                        <h2 class="chapter-title">Introdução</h2>
-                        <p class="chapter-subtitle">O ponto de partida da sua jornada.</p>
-                    </div>
-                </div>
-                <p>Este manual contém todas as informações necessárias para você se ambientar. Navegue pelo sumário ao lado para ir direto ao ponto que precisa.</p>
-                <div class="callout info">
-                    <div class="callout-content">
-                        <div class="callout-title">Informação</div>
-                        <p class="callout-text">Use os links do sumário para pular entre as seções instantaneamente.</p>
-                    </div>
-                </div>
-            </article>
+                <dt>Atributo</dt>
+                <dd>Forma reduzida da identificação. Até 7 caracteres alfanuméricos, começando por letra.</dd>
 
-            <article class="chapter reveal" id="capitulo1">
-                <div class="chapter-head">
-                    <div class="chapter-num">02</div>
-                    <div>
-                        <h2 class="chapter-title">Capítulo 1: Primeiros Passos</h2>
-                        <p class="chapter-subtitle">Configurando o seu ambiente.</p>
-                    </div>
-                </div>
-                <p>Antes de tudo, verifique se você tem acesso a todas as ferramentas listadas no painel administrativo.</p>
-                <div class="callout tip">
-                    <div class="callout-content">
-                        <div class="callout-title">Dica</div>
-                        <p class="callout-text">Salve esta página nos seus favoritos para acesso rápido no dia a dia.</p>
-                    </div>
-                </div>
-            </article>
+                <dt>Denominação</dt>
+                <dd>Nome do atributo. Até 30 caracteres.</dd>
 
-            <article class="chapter reveal" id="capitulo2">
-                <div class="chapter-head">
-                    <div class="chapter-num">03</div>
-                    <div>
-                        <h2 class="chapter-title">Capítulo 2: Regras e Processos</h2>
-                        <p class="chapter-subtitle">O que você precisa saber para operar com segurança.</p>
-                    </div>
-                </div>
-                <p>Siga os fluxos de trabalho estabelecidos para garantir a qualidade e a padronização das entregas.</p>
-            </article>
+                <dt>Tamanho</dt>
+                <dd>Define a quantidade de caracteres do atributo.</dd>
 
-            <article class="chapter reveal" id="capitulo3">
-                <div class="chapter-head">
-                    <div class="chapter-num">04</div>
-                    <div>
-                        <h2 class="chapter-title">Capítulo 3: Ferramentas</h2>
-                        <p class="chapter-subtitle">Conheça o stack tecnológico da equipe.</p>
-                    </div>
-                </div>
-                <p>Utilizamos ferramentas modernas para garantir produtividade. Confira a documentação interna para tutoriais de cada software.</p>
-            </article>
+                <dt>Fixo/Variável</dt>
+                <dd>Define o tipo de atributo fixo (F) ou variável (V).</dd>
 
-            <article class="chapter reveal" id="conclusao">
-                <div class="chapter-head">
-                    <div class="chapter-num">05</div>
-                    <div>
-                        <h2 class="chapter-title">Conclusão e Próximos Passos</h2>
-                        <p class="chapter-subtitle">Estamos juntos nessa!</p>
-                    </div>
-                </div>
-                <p>Se tiver qualquer dúvida, não hesite em procurar o seu gestor ou o time de RH. Boa sorte e boas-vindas ao time!</p>
-                <div class="callout danger">
-                    <div class="callout-content">
-                        <div class="callout-title">Atenção</div>
-                        <p class="callout-text">Confirme o recebimento e leitura deste manual no sistema de RH até sexta-feira.</p>
-                    </div>
-                </div>
-            </article>
+                <dt>Formato</dt>
+                <dd>A (Alfabético), N (Numérico), D (Data), H (Hora), E (Qualquer), V (Valor).</dd>
+            </dl>
+        </section>
 
-        </main>
-    </div>
+        <section id="comandos">
+            <h2>3. Comandos</h2>
+            <p>A linguagem OPUScase contém inúmeros comandos que podem ser usados pelo programador na criação de rotinas. Cada comando realiza ações definidas pelos argumentos e operadores associados.</p>
 
-    <!-- Botão Voltar ao Topo -->
-    <button class="back-top" id="backTop" aria-label="Voltar ao topo">↑</button>
+            <h3>Relação de Comandos Principais</h3>
+            <table>
+                <caption>Comandos mais utilizados na coluna de Procedimentos Lógicos</caption>
+                <thead>
+                    <tr>
+                        <th>Comando</th>
+                        <th>Propósito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>APAGA</code></td>
+                        <td>Eliminar todas as informações de uma entidade vinculadas ao nível informado.</td>
+                    </tr>
+                    <tr>
+                        <td><code>CHAIN</code></td>
+                        <td>Verifica a existência de um registro em disco através de acesso direto.</td>
+                    </tr>
+                    <tr>
+                        <td><code>COMPUTE</code></td>
+                        <td>Realiza cálculos matemáticos com variáveis.</td>
+                    </tr>
+                    <tr>
+                        <td><code>DECLARA</code></td>
+                        <td>Declarar as variáveis de trabalho que a rotina irá usar.</td>
+                    </tr>
+                    <tr>
+                        <td><code>EXIBE</code></td>
+                        <td>Exibir o conteúdo de cada atributo definido como EXIBIDO.</td>
+                    </tr>
+                    <tr>
+                        <td><code>FACA</code></td>
+                        <td>Atribuir valores a uma variável (Ex: <code>FACA A = "128"</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><code>SE</code></td>
+                        <td>Condicionar todos os comandos dentro de um bloco ao resultado afirmativo.</td>
+                    </tr>
+                    <tr>
+                        <td><code>VERPRO</code></td>
+                        <td>Verificar a existência do próximo registro de uma entidade.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <!-- AQUI ESTÁ A CONEXÃO CORRETA COM O JAVASCRIPT -->
-    <script src="script.js"></script>
+            <h3>Exemplo de Sintaxe: Comando SE</h3>
+            <pre><code>SE VALOR = 10
+    MENSAGEM "Valor é igual a 10"
+    FACA TOTAL = TOTAL + VALOR
+FIM</code></pre>
+        </section>
+
+        <section id="biblioteca">
+            <h2>4. Biblioteca de Funções</h2>
+            <p>O OPUScase dispõe de uma biblioteca própria de funções (libadis.a) que podem ser utilizadas em uma rotina através da coluna SUBROT.</p>
+            
+            <ul>
+                <li><strong>UDEI:</strong> Converte data externa (DD/MM/AA) em data interna.</li>
+                <li><strong>UDIE:</strong> Converte data interna em data externa.</li>
+                <li><strong>UHEI:</strong> Converte horas externas em hora interna (segundos).</li>
+                <li><strong>UHIE:</strong> Converte hora interna em hora externa.</li>
+                <li><strong>YFF:</strong> Executa a operação de nova folha impressa (Form Feed).</li>
+                <li><strong>WCAB:</strong> Executa a operação de impressão do cabeçalho padrão durante relatórios.</li>
+            </ul>
+        </section>
+
+        <section id="gerador">
+            <h2>5. Gerador de Rotinas</h2>
+            <p>O gerador de rotinas é usado para criar, editar, montar/compilar, documentar e testar rotinas.</p>
+
+            <h3>Fases do Desenvolvimento:</h3>
+            <ol>
+                <li>Manutenção do Cadastro de Rotinas</li>
+                <li>Desenha Lay-out de Entrada</li>
+                <li>Lay-out de Saída (Desenha e Agrega Atributos)</li>
+                <li>Procedimentos Lógicos</li>
+                <li>Gera e Compila (traduz para linguagem C)</li>
+                <li>Executa Programa</li>
+            </ol>
+
+            <aside>
+                <h4>Nota Importante sobre Diretórios</h4>
+                <p>É aconselhável que cada rotina esteja armazenada em um diretório organizado:</p>
+                <ul>
+                    <li>Fonte OPUScase: <code>./src</code></li>
+                    <li>Fonte C gerado: <code>./c</code></li>
+                    <li>Programa executável: <code>./exec</code></li>
+                    <li>Arquivos de dados: <code>./dados</code></li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 1993 Intersystems Consultoria de Sistemas S/C Ltda. Todos os direitos reservados.</p>
+        <p>Documentação digitalizada para fins de estudo e referência.</p>
+    </footer>
+
 </body>
 </html>
