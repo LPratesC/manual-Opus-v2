@@ -1,43 +1,199 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - OPUScase</title>
     <link rel="stylesheet" href="style.css">
-    <title>Manual de Boas vindas</title>
 </head>
 
 <body>
 
-    <!-- botao com tres barrinhas -->
-    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+    <header>
+        <h1 class="Titulo">Manual de Referência</h1>
+        <p class="Subtitulo">Primeira Edição (Janeiro de 1993)</p>
+        <p class="Texto">Esta edição aplica-se à Versão 1, Release 0 do Gerador de Aplicativos OPUScase e a todos os releases subseqüentes.</p>
+        <address>
+            <strong>INTERSYSTEMS CONSULTORIA DE SISTEMAS SIC LTDA.</strong><br>
+            Rua Tutoia, 324 - Conj. 03 - Ibirapuera<br>
+            São Paulo - SP
+        </address>
+    </header>
 
-    <div class="layout">
-        <!-- ================== Sumario ===================== -->
-        <aside>
-            <h2>📘 Sumario</h2>
-            <input type="text" class="search" id="search" placeholder="🔍 Buscar assunto..." />
+    <nav class="sumario">
+        <h2>Índice</h2>
+        <ol>
+            <li><a href="#introducao">1. Introdução</a></li>
+            <li><a href="#dicionario">2. Dicionário de Dados</a></li>
+            <li><a href="#comandos">3. Comandos</a></li>
+            <li><a href="#biblioteca">4. Biblioteca de Funções</a></li>
+            <li><a href="#gerador">5. Gerador de Rotinas</a></li>
+        </ol>
+    </nav>
 
-<p> Texto qualquer 2 Leo </p>
-<p> Texto qualquer 2 Leo </p>
-<p> Texto qualquer 2 Leo </p>
+    <main>
+        <section id="introducao">
+            <h2>1. Introdução</h2>
+            <p>Este Manual destina-se a orientar o programador/analista de sistemas que irá utilizar o OPUScase para a geração de rotinas.</p>
 
+            <h3>1.1 Introdução ao OPUScase</h3>
+            <p>O OPUScase é um produto do tipo I-CASE (Integrated Computer Aided Engineering). Permite aos profissionais de informática desenhar e gerar aplicações de forma rápida, fácil, segura, livre de erros de sintaxe e auto-documentada.</p>
+            <p>O OPUScase é composto de:</p>
+            <ul>
+                <li>Dicionário de Dados</li>
+                <li>Editor de Telas de Entrada/Saída</li>
+                <li>Linguagem 4GL em português</li>
+                <li>Gerador de Rotinas em linguagem C</li>
+                <li>Gerenciador de Banco de Dados</li>
+                <li>Documentador de Manuais</li>
+            </ul>
 
+            <h3>1.4 Como Interpretar a tela de uma rotina</h3>
+            <p>As rotinas geradas pelo OPUScase seguem a padronização SAA-CUA. Exemplo de layout:</p>
+            <pre><code>+---------------------------------------------------------------+
+| OPÇÃO  MENU  IDENTIFICA  AJUDA                                |
++---------------------------------------------------------------+
+| PRGID: NOME DA APLICAÇÃO             TTY-DD                   |
+|                                                               |
+|  [ÁREA DE TRABALHO / LAY-OUT DA ROTINA]                       |
+|                                                               |
+|                                                               |
++---------------------------------------------------------------+
+| Mensagem:                                                     |
+| F01=AJUDA  F03=SAÍDA  F10=AÇÃO  F12=ELIMINA                   |
++---------------------------------------------------------------+</code></pre>
+        </section>
 
+        <section id="dicionario">
+            <h2>2. Dicionário de Dados</h2>
+            <p>Dicionário de Dados é o conjunto das definições e especificações dos atributos e entidades, únicos no sistema.</p>
 
-        </aside>
+            <h3>2.1 Atributo</h3>
+            <p>Atributo é a designação dada a uma informação determinando o formato e suas consistências.</p>
+            
+            <h4>Elementos da especificação de um atributo:</h4>
+            <dl>
+                <dt>Banco</dt>
+                <dd>Caractere alfabético identificador do projeto ao qual o atributo está vinculado.</dd>
 
+                <dt>Atributo</dt>
+                <dd>Forma reduzida da identificação. Até 7 caracteres alfanuméricos, começando por letra.</dd>
 
+                <dt>Denominação</dt>
+                <dd>Nome do atributo. Até 30 caracteres.</dd>
 
+                <dt>Tamanho</dt>
+                <dd>Define a quantidade de caracteres do atributo.</dd>
 
+                <dt>Fixo/Variável</dt>
+                <dd>Define o tipo de atributo fixo (F) ou variável (V).</dd>
 
+                <dt>Formato</dt>
+                <dd>A (Alfabético), N (Numérico), D (Data), H (Hora), E (Qualquer), V (Valor).</dd>
+            </dl>
+        </section>
 
-    </div>
+        <section id="comandos">
+            <h2>3. Comandos</h2>
+            <p>A linguagem OPUScase contém inúmeros comandos que podem ser usados pelo programador na criação de rotinas. Cada comando realiza ações definidas pelos argumentos e operadores associados.</p>
 
+            <h3>Relação de Comandos Principais</h3>
+            <table>
+                <caption>Comandos mais utilizados na coluna de Procedimentos Lógicos</caption>
+                <thead>
+                    <tr>
+                        <th>Comando</th>
+                        <th>Propósito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>APAGA</code></td>
+                        <td>Eliminar todas as informações de uma entidade vinculadas ao nível informado.</td>
+                    </tr>
+                    <tr>
+                        <td><code>CHAIN</code></td>
+                        <td>Verifica a existência de um registro em disco através de acesso direto.</td>
+                    </tr>
+                    <tr>
+                        <td><code>COMPUTE</code></td>
+                        <td>Realiza cálculos matemáticos com variáveis.</td>
+                    </tr>
+                    <tr>
+                        <td><code>DECLARA</code></td>
+                        <td>Declarar as variáveis de trabalho que a rotina irá usar.</td>
+                    </tr>
+                    <tr>
+                        <td><code>EXIBE</code></td>
+                        <td>Exibir o conteúdo de cada atributo definido como EXIBIDO.</td>
+                    </tr>
+                    <tr>
+                        <td><code>FACA</code></td>
+                        <td>Atribuir valores a uma variável (Ex: <code>FACA A = "128"</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><code>SE</code></td>
+                        <td>Condicionar todos os comandos dentro de um bloco ao resultado afirmativo.</td>
+                    </tr>
+                    <tr>
+                        <td><code>VERPRO</code></td>
+                        <td>Verificar a existência do próximo registro de uma entidade.</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <script src="script.js"></script>
+            <h3>Exemplo de Sintaxe: Comando SE</h3>
+            <pre><code>SE VALOR = 10
+    MENSAGEM "Valor é igual a 10"
+    FACA TOTAL = TOTAL + VALOR
+FIM</code></pre>
+        </section>
+
+        <section id="biblioteca">
+            <h2>4. Biblioteca de Funções</h2>
+            <p>O OPUScase dispõe de uma biblioteca própria de funções (libadis.a) que podem ser utilizadas em uma rotina através da coluna SUBROT.</p>
+            
+            <ul>
+                <li><strong>UDEI:</strong> Converte data externa (DD/MM/AA) em data interna.</li>
+                <li><strong>UDIE:</strong> Converte data interna em data externa.</li>
+                <li><strong>UHEI:</strong> Converte horas externas em hora interna (segundos).</li>
+                <li><strong>UHIE:</strong> Converte hora interna em hora externa.</li>
+                <li><strong>YFF:</strong> Executa a operação de nova folha impressa (Form Feed).</li>
+                <li><strong>WCAB:</strong> Executa a operação de impressão do cabeçalho padrão durante relatórios.</li>
+            </ul>
+        </section>
+
+        <section id="gerador">
+            <h2>5. Gerador de Rotinas</h2>
+            <p>O gerador de rotinas é usado para criar, editar, montar/compilar, documentar e testar rotinas.</p>
+
+            <h3>Fases do Desenvolvimento:</h3>
+            <ol>
+                <li>Manutenção do Cadastro de Rotinas</li>
+                <li>Desenha Lay-out de Entrada</li>
+                <li>Lay-out de Saída (Desenha e Agrega Atributos)</li>
+                <li>Procedimentos Lógicos</li>
+                <li>Gera e Compila (traduz para linguagem C)</li>
+                <li>Executa Programa</li>
+            </ol>
+
+            <aside>
+                <h4>Nota Importante sobre Diretórios</h4>
+                <p>É aconselhável que cada rotina esteja armazenada em um diretório organizado:</p>
+                <ul>
+                    <li>Fonte OPUScase: <code>./src</code></li>
+                    <li>Fonte C gerado: <code>./c</code></li>
+                    <li>Programa executável: <code>./exec</code></li>
+                    <li>Arquivos de dados: <code>./dados</code></li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 1993 Intersystems Consultoria de Sistemas S/C Ltda. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
-
 </html>
