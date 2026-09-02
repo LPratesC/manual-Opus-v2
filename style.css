@@ -1,3 +1,444 @@
-*{
-  background-color: #e7d0d0;
+/* ==========================================
+   MANUAL DE REFERÊNCIA - OPUScase
+   Versão minimalista - Branco e Gelo
+   ========================================== */
+
+/* 1. VARIÁVEIS GLOBAIS
+   ========================================== */
+:root {
+  /* Cores principais */
+  --azul-escuro: #1e3a8a;
+  --azul-medio: #2563eb;
+  --azul-claro: #dbeafe;
+  --laranja: #ea580c;
+  --laranja-claro: #fff7ed;
+
+  /* Neutros */
+  --branco: #ffffff;
+  --gelo: #f4f7f9;
+  --cinza-borda: #e2e8f0;
+  --cinza-texto: #334155;
+  --cinza-suave: #64748b;
+
+  /* Layout */
+  --sidebar: 260px;
+  --max-conteudo: 860px;
+  --raio: 6px;
+
+  /* Tipografia */
+  --fonte-serif: Georgia, "Times New Roman", serif;
+  --fonte-sans: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --fonte-mono: "Courier New", Courier, monospace;
+}
+
+/* 2. RESET
+   ========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  font-family: var(--fonte-serif);
+  color: var(--cinza-texto);
+  background-color: var(--gelo);
+  line-height: 1.7;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+/* 3. LAYOUT PRINCIPAL (Grid: sidebar + conteúdo)
+   ========================================== */
+body {
+  display: grid;
+  grid-template-columns: var(--sidebar) 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "nav     main"
+    "footer  footer";
+  min-height: 100vh;
+}
+
+nav.sumario   { grid-area: nav; }
+main          { grid-area: main; }
+footer        { grid-area: footer; }
+
+/* 4. SUMÁRIO (Sticky à esquerda)
+   ========================================== */
+nav.sumario {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--branco);
+  border-right: 1px solid var(--cinza-borda);
+  padding: 2rem 1.25rem;
+}
+
+nav.sumario h2 {
+  font-family: var(--fonte-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--azul-escuro);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--laranja);
+}
+
+nav.sumario ol {
+  list-style: none;
+  counter-reset: item;
+}
+
+nav.sumario li {
+  margin-bottom: 0.25rem;
+}
+
+nav.sumario a {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  color: var(--cinza-texto);
+  text-decoration: none;
+  font-family: var(--fonte-sans);
+  font-size: 0.9rem;
+  border-radius: var(--raio);
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+nav.sumario a:hover {
+  background-color: var(--gelo);
+  color: var(--azul-medio);
+  border-left-color: var(--laranja);
+  padding-left: 1rem;
+}
+
+/* 5. CONTEÚDO PRINCIPAL
+   ========================================== */
+main {
+  background-color: var(--branco);
+  padding: 3rem 3.5rem;
+  max-width: var(--max-conteudo);
+  width: 100%;
+}
+
+/* 6. SEÇÕES E TÍTULOS
+   ========================================== */
+section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--cinza-borda);
+  scroll-margin-top: 2rem;
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+/* Destaque visual ao clicar na âncora */
+section:target {
+  background-color: var(--laranja-claro);
+  border-left: 4px solid var(--laranja);
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  border-radius: 0 var(--raio) var(--raio) 0;
+}
+
+section h2 {
+  font-family: var(--fonte-sans);
+  color: var(--azul-escuro);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--cinza-borda);
+}
+
+section h3 {
+  font-family: var(--fonte-sans);
+  color: var(--azul-medio);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem 0;
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--laranja);
+}
+
+section h4 {
+  font-family: var(--fonte-sans);
+  color: var(--cinza-texto);
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: italic;
+  margin: 1.5rem 0 0.75rem 0;
+}
+
+section p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* 7. LISTAS
+   ========================================== */
+ul, ol {
+  margin: 0 0 1.25rem 1.5rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+ul li::marker {
+  color: var(--laranja);
+}
+
+ol li::marker {
+  color: var(--azul-medio);
+  font-weight: bold;
+}
+
+/* Lista de definição (glossário) */
+dl {
+  background-color: var(--gelo);
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--raio);
+  margin: 1.25rem 0 1.5rem 0;
+}
+
+dt {
+  font-family: var(--fonte-sans);
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+dt:first-child {
+  margin-top: 0;
+}
+
+dd {
+  margin: 0.25rem 0 0.75rem 1rem;
+  color: var(--cinza-texto);
+  padding-left: 0.5rem;
+}
+
+/* 8. CÓDIGO
+   ========================================== */
+pre {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--raio);
+  overflow-x: auto;
+  margin: 1.25rem 0 1.5rem 0;
+  border-left: 4px solid var(--laranja);
+  font-family: var(--fonte-mono);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+}
+
+code {
+  font-family: var(--fonte-mono);
+  background-color: var(--gelo);
+  color: var(--azul-escuro);
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.88em;
+  font-weight: 600;
+}
+
+/* 9. TABELAS
+   ========================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-family: var(--fonte-sans);
+  font-size: 0.92rem;
+  background-color: var(--branco);
+  border: 1px solid var(--cinza-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+}
+
+caption {
+  font-family: var(--fonte-sans);
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-bottom: 0.75rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: var(--gelo);
+  color: var(--azul-escuro);
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--cinza-borda);
+}
+
+td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--cinza-borda);
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--gelo);
+}
+
+tbody tr:hover {
+  background-color: var(--azul-claro);
+}
+
+/* 10. DESTAQUES (ASIDE)
+   ========================================== */
+aside {
+  background-color: var(--gelo);
+  border-left: 4px solid var(--laranja);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 var(--raio) var(--raio) 0;
+  font-family: var(--fonte-sans);
+  font-size: 0.95rem;
+}
+
+aside h4 {
+  color: var(--laranja);
+  font-size: 0.9rem;
+  font-style: normal;
+  margin: 0 0 0.75rem 0;
+  font-weight: 700;
+}
+
+aside p:last-child {
+  margin-bottom: 0;
+}
+
+aside ul {
+  margin-bottom: 0;
+}
+
+/* 11. RODAPÉ
+   ========================================== */
+footer {
+  grid-column: 1 / -1;
+  background-color: var(--branco);
+  color: var(--cinza-suave);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-family: var(--fonte-sans);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--cinza-borda);
+}
+
+/* 12. SCROLLBAR DO SUMÁRIO
+   ========================================== */
+nav.sumario::-webkit-scrollbar {
+  width: 6px;
+}
+
+nav.sumario::-webkit-scrollbar-track {
+  background: var(--gelo);
+}
+
+nav.sumario::-webkit-scrollbar-thumb {
+  background: var(--cinza-borda);
+  border-radius: 3px;
+}
+
+nav.sumario::-webkit-scrollbar-thumb:hover {
+  background: var(--azul-medio);
+}
+
+/* 13. RESPONSIVIDADE
+   ========================================== */
+@media (max-width: 900px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "main"
+      "footer";
+  }
+
+  nav.sumario {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--cinza-borda);
+    padding: 1.25rem;
+  }
+
+  nav.sumario ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+
+  nav.sumario a {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  main {
+    padding: 2rem 1.5rem;
+  }
+
+  section:target {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1.25rem;
+  }
+}
+
+/* 14. IMPRESSÃO
+   ========================================== */
+@media print {
+  body {
+    display: block;
+    background: white;
+  }
+
+  nav.sumario {
+    position: static;
+    height: auto;
+    border: 1px solid #ccc;
+    page-break-after: always;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  pre, table {
+    page-break-inside: avoid;
+  }
 }
