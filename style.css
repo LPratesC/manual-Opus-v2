@@ -430,3 +430,41 @@ nav.sumario::-webkit-scrollbar-thumb:hover {
         page-break-inside: avoid;
     }
 }
+
+/* --- LAYOUT DA SEÇÃO --- */
+        .secao-informativa {
+            display: flex;
+            align-items: center;
+            gap: 50px; /* Espaço entre o texto e a imagem */
+            max-width: 1200px;
+            margin: 60px auto;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .imagem img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Efeito suave ao passar o mouse na imagem */
+        .imagem img:hover {
+            transform: scale(1.02);
+        }
+
+        /* --- RESPONSIVIDADE (CELULARES) --- */
+        @media (max-width: 768px) {
+            .secao-informativa {
+                flex-direction: column; /* Empilha os elementos na vertical */
+                padding: 30px 20px;
+                gap: 30px;
+                margin: 20px auto;
+            }
+
+            
+        }
