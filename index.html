@@ -13,7 +13,8 @@
     <header>
         <h1 class="Titulo">Manual de Referência</h1>
         <p class="Subtitulo">Primeira Edição (Janeiro de 1993)</p>
-        <p class="Texto">Esta edição aplica-se à Versão 1, Release 0 do Gerador de Aplicativos OPUScase e a todos os releases subseqüentes.</p>
+        <p class="Texto">Esta edição aplica-se à Versão 1, Release 0 do Gerador de Aplicativos OPUScase e a todos os
+            releases subseqüentes.</p>
         <address>
             <strong>INTERSYSTEMS CONSULTORIA DE SISTEMAS SIC LTDA.</strong><br>
             Rua Tutoia, 324 - Conj. 03 - Ibirapuera<br>
@@ -24,7 +25,23 @@
     <nav class="sumario">
         <h2>Índice</h2>
         <ol>
-            <li><a href="#introducao">1. Introdução</a></li>
+            <li><a href="#introducao">1. Introdução</a>
+
+                <ol>
+                    <li class="subitem">
+                        <a href="#subitem-1">1.1 Introdução ao OPUScase</a>
+                    </li>
+                    <li>
+                        <a href="#subitem-2">1.2 Quem deve usar este manual</a>
+                    </li>
+                    <li>
+                        <a href="#subitem-3">1.3 Pré-requisitos</a>
+                    </li>
+                    <li>
+                        <a href="#subitem-4">1.4 Como Interpretar a tela de uma rotina</a>
+                    </li>
+                </ol>
+            </li>
             <li><a href="#dicionario">2. Dicionário de Dados</a></li>
             <li><a href="#comandos">3. Comandos</a></li>
             <li><a href="#biblioteca">4. Biblioteca de Funções</a></li>
@@ -33,45 +50,68 @@
     </nav>
 
     <main>
-        <section id="introducao">
-            <h2>1. Introdução</h2>
-            <p>Este Manual destina-se a orientar o programador/analista de sistemas que irá utilizar o OPUScase para a geração de rotinas.</p>
+        
+            <section id="introducao">
+                <h2>1. Introdução</h2>
+                <p>Este Manual destina-se a orientar o programador/analista de sistemas que irá utilizar o OPUScase para a geração de rotinas.</p>
+        
 
-            <h3>1.1 Introdução ao OPUScase</h3>
-            <p>O OPUScase é um produto do tipo I-CASE (Integrated Computer Aided Engineering). Permite aos profissionais de informática desenhar e gerar aplicações de forma rápida, fácil, segura, livre de erros de sintaxe e auto-documentada.</p>
-            <p>O OPUScase é composto de:</p>
-            <ul>
-                <li>Dicionário de Dados</li>
-                <li>Editor de Telas de Entrada/Saída</li>
-                <li>Linguagem 4GL em português</li>
-                <li>Gerador de Rotinas em linguagem C</li>
-                <li>Gerenciador de Banco de Dados</li>
-                <li>Documentador de Manuais</li>
-            </ul>
 
-            <h3>1.4 Como Interpretar a tela de uma rotina</h3>
-            <p>As rotinas geradas pelo OPUScase seguem a padronização SAA-CUA. Exemplo de layout:</p>
-            <pre><code>+---------------------------------------------------------------+
-| OPÇÃO  MENU  IDENTIFICA  AJUDA                                |
-+---------------------------------------------------------------+
-| PRGID: NOME DA APLICAÇÃO             TTY-DD                   |
-|                                                               |
-|  [ÁREA DE TRABALHO / LAY-OUT DA ROTINA]                       |
-|                                                               |
-|                                                               |
-+---------------------------------------------------------------+
-| Mensagem:                                                     |
-| F01=AJUDA  F03=SAÍDA  F10=AÇÃO  F12=ELIMINA                   |
-+---------------------------------------------------------------+</code></pre>
+        <h3 id="subitem-1">1.1 Introdução ao OPUScase</h3>
+        <p>O OPUScase é um produto do tipo I-CASE (Integrated Computer Aided Engineering). Permite aos profissionais
+            de informática desenhar e gerar aplicações de forma rápida, fácil, segura, livre de erros de sintaxe e
+            auto-documentada.</p>
+        <p>O OPUScase é composto de:</p>
+        <ul>
+            <li>Dicionário de Dados</li>
+            <li>Editor de Telas de Entrada/Saída</li>
+            <li>Linguagem 4GL em português</li>
+            <li>Gerador de Rotinas em linguagem C</li>
+            <li>Gerenciador de Banco de Dados</li>
+            <li>Documentador de Manuais</li>
+        </ul>
+        <h3 id="subitem-2">1.2 Quem deve usar este manual</h3>
+        <p>Este manual deve ser utilizado pelo pessoal técnico que irá desenvolver rotinas através do OPUScase.
+            servindo como fonte de consulta para diminuir eventuais duvidas que venham surgir na utilização do
+            sistema.
+            E um complemento do manual de usuário onde você irá encontrar as definições que o OPUScase utiliza.
+            Eventuais duvidas poderão ser eliminadas através da utilização de exemplos contidos no Manual "O ABC
+            do OPUScase".</p>
+
+        <h3 id="subitem-3">1.3 Pré-requisitos</h3>
+
+        <p>Para desenvolver rotinas em OPUScase, apesar de ser fácil e simples, é recomendável que você tenha o
+            conhecimento dos seguintes assuntos:
+        <ul>
+            <li>Conhecimento de Análise Orientada por Objetos</li>
+            <li>Funções Básicas de Unix</li>
+            <li>Programação em linguagem "C"</li>
+        </ul>
+        </p>
+        <h3 id="subitem-4">1.4 Como Interpretar a tela de uma rotina</h3>
+        <div>
+            <p>
+                As rotina geradas pelo OPUScase seguem a padronização SAA-CUA (System Architeture Application -
+                Common Users Acess). assim todas elas obedecem as definições abaixo:
+            </p>
+
+        </div>
+        <div class="imagem">
+            <img src="./img/OPUS.png" alt="img opus case">
+        </div>
+
         </section>
+
+   
 
         <section id="dicionario">
             <h2>2. Dicionário de Dados</h2>
-            <p>Dicionário de Dados é o conjunto das definições e especificações dos atributos e entidades, únicos no sistema.</p>
+            <p>Dicionário de Dados é o conjunto das definições e especificações dos atributos e entidades, únicos no
+                sistema.</p>
 
             <h3>2.1 Atributo</h3>
             <p>Atributo é a designação dada a uma informação determinando o formato e suas consistências.</p>
-            
+
             <h4>Elementos da especificação de um atributo:</h4>
             <dl>
                 <dt>Banco</dt>
@@ -96,7 +136,8 @@
 
         <section id="comandos">
             <h2>3. Comandos</h2>
-            <p>A linguagem OPUScase contém inúmeros comandos que podem ser usados pelo programador na criação de rotinas. Cada comando realiza ações definidas pelos argumentos e operadores associados.</p>
+            <p>A linguagem OPUScase contém inúmeros comandos que podem ser usados pelo programador na criação de
+                rotinas. Cada comando realiza ações definidas pelos argumentos e operadores associados.</p>
 
             <h3>Relação de Comandos Principais</h3>
             <table>
@@ -144,16 +185,14 @@
             </table>
 
             <h3>Exemplo de Sintaxe: Comando SE</h3>
-            <pre><code>SE VALOR = 10
-    MENSAGEM "Valor é igual a 10"
-    FACA TOTAL = TOTAL + VALOR
-FIM</code></pre>
+
         </section>
 
         <section id="biblioteca">
             <h2>4. Biblioteca de Funções</h2>
-            <p>O OPUScase dispõe de uma biblioteca própria de funções (libadis.a) que podem ser utilizadas em uma rotina através da coluna SUBROT.</p>
-            
+            <p>O OPUScase dispõe de uma biblioteca própria de funções (libadis.a) que podem ser utilizadas em uma rotina
+                através da coluna SUBROT.</p>
+
             <ul>
                 <li><strong>UDEI:</strong> Converte data externa (DD/MM/AA) em data interna.</li>
                 <li><strong>UDIE:</strong> Converte data interna em data externa.</li>
@@ -196,4 +235,5 @@ FIM</code></pre>
     </footer>
 
 </body>
+
 </html>
