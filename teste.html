@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumário com Navegação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sumário lateral fixo */
+        .sidebar {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 8px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #555;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #ddd;
+            color: #000;
+        }
+
+        .sidebar .subitem {
+            padding-left: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Conteúdo principal */
+        .main-content {
+            margin-left: 250px;
+            padding: 40px;
+            flex: 1;
+            max-width: calc(100% - 250px);
+        }
+
+        .main-content section {
+            margin-bottom: 50px;
+            scroll-margin-top: 20px;
+        }
+
+        .main-content h1 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .main-content h2 {
+            color: #444;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .main-content h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .main-content p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+
+            background-color: #f4f4f4;
+            /*text-align: center;*/
+           /* padding: 15px 0;*/
+           /* border-top: 1px solid #ddd;*/
+            /*position: relative;*/
+            /*bottom: 0;*/
+            /*width: 10%;*/
+           
+        }
+
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sumário lateral -->
+    <nav class="sidebar">
+        <h2>Sumário</h2>
+        <ul>
+            <li><a href="#introducao">1. Introdução</a></li>
+            <li>
+                <a href="#capitulo1">2. Capítulo 1</a>
+                <ul>
+                    <li class="subitem"><a href="#secao1-1">2.1 Seção 1.1</a></li>
+                    <li class="subitem"><a href="#secao1-2">2.2 Seção 1.2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#capitulo2">3. Capítulo 2</a>
+                <ul>
+                    <li class="subitem"><a href="#secao2-1">3.1 Seção 2.1</a></li>
+                    <li class="subitem"><a href="#secao2-2">3.2 Seção 2.2</a></li>
+                    <li class="subitem"><a href="#secao2-3">3.3 Seção 2.3</a></li>
+                </ul>
+            </li>
+            <li><a href="#conclusao">4. Conclusão</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <section id="introducao">
+            <h1>Introdução</h1>
+            <p>Este é um exemplo de página com sumário lateral fixo e navegação por âncoras. O sumário permanece visível
+                enquanto você rola a página.</p>
+            <p>Use os links no menu lateral para navegar rapidamente entre as seções.</p>
+        </section>
+
+        <section id="capitulo1">
+            <h2>Capítulo 1</h2>
+            <p>Conteúdo do primeiro capítulo. Este capítulo contém várias seções que podem ser acessadas através do
+                sumário.</p>
+
+            <h3 id="secao1-1">2.1 Seção 1.1</h3>
+            <p>Esta é a primeira seção do capítulo 1. Você pode adicionar aqui qualquer conteúdo relevante para sua
+                página.</p>
+
+            <h3 id="secao1-2">2.2 Seção 1.2</h3>
+            <p>Esta é a segunda seção do capítulo 1. Note como o scroll é suave ao clicar nos links do sumário.</p>
+        </section>
+
+        <section id="capitulo2">
+            <h2>Capítulo 2</h2>
+            <p>Conteúdo do segundo capítulo. Este é um exemplo mais extenso para demonstrar a funcionalidade do scroll.
+            </p>
+
+            <h3 id="secao2-1">3.1 Seção 2.1</h3>
+            <p>Primeira seção do capítulo 2. O CSS utiliza a propriedade scroll-margin-top para garantir que os títulos
+                não fiquem escondidos ao navegar.</p>
+
+            <h3 id="secao2-2">3.2 Seção 2.2</h3>
+            <p>Segunda seção do capítulo 2. O layout é responsivo e funciona bem em diferentes tamanhos de tela.</p>
+
+            <h3 id="secao2-3">3.3 Seção 2.3</h3>
+            <p>Terceira seção do capítulo 2. Você pode personalizar as cores, fontes e espaçamentos conforme necessário.
+            </p>
+        </section>
+
+        <section id="conclusao">
+            <h2>Conclusão</h2>
+            <p>Esta é a seção de conclusão. O footer aparece no final da página, após todo o conteúdo principal.</p>
+            <p>Você pode adicionar mais seções conforme necessário para seu projeto.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <!--  <p>&copy; 2024 - Exemplo de Sumário com Navegação</p>-->
+    </footer>
+</body>
+
+</html>

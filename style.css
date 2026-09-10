@@ -22,7 +22,7 @@
 
     /* Layout */
     --sidebar: 260px;
-    --max-conteudo: 860px;
+    --max-conteudo: 1300px;
     --raio: 6px;
 
     /* Tipografia */
@@ -467,4 +467,16 @@ nav.sumario::-webkit-scrollbar-thumb:hover {
             }
 
             
+        }
+
+        .subitem h3 {
+            font-family: var(--fonte-sans);
+            color: var(--azul-escuro);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--cinza-borda);
+            scroll-margin-top: 20px;
+
         }
