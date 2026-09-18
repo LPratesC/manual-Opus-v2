@@ -43,18 +43,14 @@
                 </ol>
             </li>
             <li><a href="#dicionario">2. Dicionário de Dados</a>
-             <ol>
+                <ol>
                     <li class="subitem">
-                        <a href="#subitem-5">1.1 Introdução ao OPUScase</a>
-                    </li>
-                    <li>
-                        <a href="#subitem-6">1.2 Quem deve usar este manual</a>
-                    </li>
-                    <li>
-                        <a href="#subitem-7">1.3 Pré-requisitos</a>
-                    </li>
-                    <li>
-                        <a href="#subitem-8">1.4 Como Interpretar a tela de uma rotina</a>
+                        <a href="#subitem-5">2.1 Atributo</a>
+                        <ol>
+                            <li class="subitem">
+                                <a href="subitem-6">2.1.1 Elementos da especificação de um atributo. </a>
+                            </li>
+                        </ol>
                     </li>
                 </ol>
             </li>
@@ -65,69 +61,77 @@
     </nav>
 
     <main>
-        
-            <section id="introducao">
-                <h2>1. Introdução</h2>
-                <p>Este Manual destina-se a orientar o programador/analista de sistemas que irá utilizar o OPUScase para a geração de rotinas.</p>
-        
+
+        <section id="introducao">
+            <h2>1. Introdução</h2>
+            <p>Este Manual destina-se a orientar o programador/analista de sistemas que irá utilizar o OPUScase para a
+                geração de rotinas.</p>
 
 
-        <h3 id="subitem-1">1.1 Introdução ao OPUScase</h3>
-        <p>O OPUScase é um produto do tipo I-CASE (Integrated Computer Aided Engineering). Permite aos profissionais
-            de informática desenhar e gerar aplicações de forma rápida, fácil, segura, livre de erros de sintaxe e
-            auto-documentada.</p>
-        <p>O OPUScase é composto de:</p>
-        <ul>
-            <li>Dicionário de Dados</li>
-            <li>Editor de Telas de Entrada/Saída</li>
-            <li>Linguagem 4GL em português</li>
-            <li>Gerador de Rotinas em linguagem C</li>
-            <li>Gerenciador de Banco de Dados</li>
-            <li>Documentador de Manuais</li>
-        </ul>
-        <h3 id="subitem-2">1.2 Quem deve usar este manual</h3>
-        <p>Este manual deve ser utilizado pelo pessoal técnico que irá desenvolver rotinas através do OPUScase.
-            servindo como fonte de consulta para diminuir eventuais duvidas que venham surgir na utilização do
-            sistema.
-            E um complemento do manual de usuário onde você irá encontrar as definições que o OPUScase utiliza.
-            Eventuais duvidas poderão ser eliminadas através da utilização de exemplos contidos no Manual "O ABC
-            do OPUScase".</p>
 
-        <h3 id="subitem-3">1.3 Pré-requisitos</h3>
+            <h3 id="subitem-1">1.1 Introdução ao OPUScase</h3>
+            <p>O OPUScase é um produto do tipo I-CASE (Integrated Computer Aided Engineering). Permite aos profissionais
+                de informática desenhar e gerar aplicações de forma rápida, fácil, segura, livre de erros de sintaxe e
+                auto-documentada.</p>
+            <p>O OPUScase é composto de:</p>
+            <ul>
+                <li>Dicionário de Dados</li>
+                <li>Editor de Telas de Entrada/Saída</li>
+                <li>Linguagem 4GL em português</li>
+                <li>Gerador de Rotinas em linguagem C</li>
+                <li>Gerenciador de Banco de Dados</li>
+                <li>Documentador de Manuais</li>
+            </ul>
+            <h3 id="subitem-2">1.2 Quem deve usar este manual</h3>
+            <p>Este manual deve ser utilizado pelo pessoal técnico que irá desenvolver rotinas através do OPUScase.
+                servindo como fonte de consulta para diminuir eventuais duvidas que venham surgir na utilização do
+                sistema.
+                E um complemento do manual de usuário onde você irá encontrar as definições que o OPUScase utiliza.
+                Eventuais duvidas poderão ser eliminadas através da utilização de exemplos contidos no Manual "O ABC
+                do OPUScase".</p>
 
-        <p>Para desenvolver rotinas em OPUScase, apesar de ser fácil e simples, é recomendável que você tenha o
-            conhecimento dos seguintes assuntos:
-        <ul>
-            <li>Conhecimento de Análise Orientada por Objetos</li>
-            <li>Funções Básicas de Unix</li>
-            <li>Programação em linguagem "C"</li>
-        </ul>
-        </p>
-        <h3 id="subitem-4">1.4 Como Interpretar a tela de uma rotina</h3>
-        <div>
-            <p>
-                As rotina geradas pelo OPUScase seguem a padronização SAA-CUA (System Architeture Application -
-                Common Users Acess). assim todas elas obedecem as definições abaixo:
+            <h3 id="subitem-3">1.3 Pré-requisitos</h3>
+
+            <p>Para desenvolver rotinas em OPUScase, apesar de ser fácil e simples, é recomendável que você tenha o
+                conhecimento dos seguintes assuntos:
+            <ul>
+                <li>Conhecimento de Análise Orientada por Objetos</li>
+                <li>Funções Básicas de Unix</li>
+                <li>Programação em linguagem "C"</li>
+            </ul>
             </p>
+            <h3 id="subitem-4">1.4 Como Interpretar a tela de uma rotina</h3>
+            <div>
+                <p>
+                    As rotina geradas pelo OPUScase seguem a padronização SAA-CUA (System Architeture Application -
+                    Common Users Acess). assim todas elas obedecem as definições abaixo:
+                </p>
 
-        </div>
-        <div class="imagem">
-            <img src="./img/OPUS.png" alt="img opus case">
-        </div>
+            </div>
+            <div class="imagem">
+                <img src="./img/OPUS.png" alt="img opus case">
+            </div>
 
         </section>
 
-   
+
 
         <section id="dicionario">
             <h2>2. Dicionário de Dados</h2>
             <p>Dicionário de Dados é o conjunto das definições e especificações dos atributos e entidades, únicos no
                 sistema.</p>
 
-            <h3>2.1 Atributo</h3>
+            <h3 id="subitem-5">2.1 Atributo</h3>
             <p>Atributo é a designação dada a uma informação determinando o formato e suas consistências.</p>
 
-            <h4>Elementos da especificação de um atributo:</h4>
+            <h4>O atributo é utilizado nas definições dos registros e rotinas.
+                Um atributo é único no sistema e sua utilização está vinculada a uma determinada entidade ou rotina.
+                portanto, podemos criar um atributo que não esteja vinculado diretamente a uma entidade ou à uma rotina.
+                Na entidade os atributos aparecem na composição do registro, na formação dos índices principal e nas
+                visões.
+                Na rotina os atributos aparecem nas colunas ATRIBUTO e COMANDO dos PROCEDIMENTOS
+                LÓGICOS. bem como no campo ATRIBUTO da definição do Lay-out de Saída</h4>
+
             <dl>
                 <dt>Banco</dt>
                 <dd>Caractere alfabético identificador do projeto ao qual o atributo está vinculado.</dd>
@@ -137,6 +141,9 @@
 
                 <dt>Denominação</dt>
                 <dd>Nome do atributo. Até 30 caracteres.</dd>
+                <dd class="exemplo">Exemplo:<br>
+                    Atributo : CODREP<br>
+                    Denominação: Código do representante ou Vendedor</dd>
 
                 <dt>Tamanho</dt>
                 <dd>Define a quantidade de caracteres do atributo.</dd>
