@@ -1,0 +1,4 @@
+Para puxar a ultima atualização de uma branch específica:
+
+git fetch --prune (atualiza a lista de branches locais com base no repositório remoto)
+git pull origin <branch>
