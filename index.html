@@ -143,7 +143,7 @@
 
                 <dt>Denominação</dt>
                 <dd>Nome do atributo. Até 30 caracteres.</dd>
-                <dd class="exemplo">Exemplo:<br>
+                <dd class="exemplo"><br>
                     Atributo : CODREP<br>
                     Denominação: Código do representante ou Vendedor</dd>
 
@@ -152,8 +152,28 @@
 
                 <dt>Fixo/Variável</dt>
                 <dd>Define o tipo de atributo fixo (F) ou variável (V).</dd>
+                <dd>Se o tipo do atributo for fixo (F). na digitação. o campo deve ser completamente preenchido.<br>
+                    Se o tipo do atributo for fixo (F) e o formato for numérico é preenchido automaticamente com zeros
+                    esquerda.<br>
+                    Se o tipo do atributo for variável (V). seja qual for o formato. é permitido digitar até o número de
+                    caracteres
+                    especificado pelo tamanho do atributo.</dd>
+
+                <dt>Default</dt>
+                <dd>Determina o conteúdo do atributo quando você digitar a tecla ENTER.</dd>
+
+                <dt>Aceitos</dt>
+                <dd>Determina quais valores que você pode digitar e quais são aceitos pelo sistema.</dd>
+                <dd class="exemplo"><br>
+                    Atributo: OPCAO<br>
+                    Aceitos: 1,2,3,4<br>
+                </dd>
+                <dd>É aceito como conteúdo somente um dos valores: I ou 2 ou 3 ou ~ ou :\
+                    Se este campo for preenchido é dispensado o campo formato</dd>
 
                 <dt>Formato</dt>
+                <dd>Determina o formato do conteúdo do atributo no caso de você não ter especificado o campo Aceitos.<br>
+                Os formatos validos são:</dd>
                 <dd>
                     <ul>
                         <li>A (Alfabético)</li>

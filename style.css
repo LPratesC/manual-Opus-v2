@@ -77,7 +77,6 @@ footer {
     grid-area: footer;
 }
 
-
 /* 4. SUMÁRIO (Sticky à esquerda)
    ========================================== */
 nav.sumario {
@@ -433,43 +432,87 @@ nav.sumario::-webkit-scrollbar-thumb:hover {
 }
 
 /* --- LAYOUT DA SEÇÃO --- */
-        .secao-informativa {
-            display: flex;
-            align-items: center;
-            gap: 50px; /* Espaço entre o texto e a imagem */
-            max-width: 1200px;
-            margin: 60px auto;
-            background-color: #ffffff;
-            padding: 50px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
+.secao-informativa {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Espaço entre o texto e a imagem */
+    max-width: 1200px;
+    margin: 60px auto;
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
 
-        .imagem img {
-            width: 30%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
+.imagem img {
+    width: 30%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
 
-        /* Efeito suave ao passar o mouse na imagem */
-        .imagem img:hover {
-            transform: scale(1.02);
-        }
+/* Efeito suave ao passar o mouse na imagem */
+.imagem img:hover {
+    transform: scale(1.02);
+}
 
-        /* --- RESPONSIVIDADE (CELULARES) --- */
-        @media (max-width: 768px) {
-            .secao-informativa {
-                flex-direction: column; /* Empilha os elementos na vertical */
-                padding: 30px 20px;
-                gap: 30px;
-                margin: 20px auto;
-            }
+/* --- RESPONSIVIDADE (CELULARES) --- */
+@media (max-width: 768px) {
+    .secao-informativa {
+        flex-direction: column; /* Empilha os elementos na vertical */
+        padding: 30px 20px;
+        gap: 30px;
+        margin: 20px auto;
+    }
+}
 
-            
-        }
+.exemplo {
+    /* Layout */
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 6px;
 
-        
-       
-      
+    /* Visual */
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    /* Tipografia */
+    font-family: Georgia, serif;
+    font-size: 1em;
+    line-height: 1.7;
+    color: #333;
+
+    /* Comportamento */
+    position: relative;
+}
+
+/* Rótulo "Exemplo" no topo */
+.exemplo::before {
+    content: 'Exemplo';
+    display: block;
+    font-weight: bold;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Estilização interna */
+.exemplo p {
+    margin-bottom: 10px;
+}
+
+.exemplo p:last-child {
+    margin-bottom: 0;
+}
+
+.exemplo code {
+    background-color: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    color: #c7254e;
+}
