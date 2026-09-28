@@ -13,7 +13,8 @@
     <header>
         <h1 class="Titulo">Manual de Referência</h1>
         <p class="Subtitulo">Primeira Edição (Janeiro de 1993)</p>
-        <p class="Texto">Esta edição aplica-se à Versão 1, Release 0 do Gerador de Aplicativos OPUScase e a todos os releases subseqüentes.</p>
+        <p class="Texto">Esta edição aplica-se à Versão 1, Release 0 do Gerador de Aplicativos OPUScase e a todos os
+            releases subseqüentes.</p>
         <address>
             <strong>INTERSYSTEMS CONSULTORIA DE SISTEMAS SIC LTDA.</strong><br>
             Rua Tutoia, 324 - Conj. 03 - Ibirapuera<br>
@@ -24,8 +25,35 @@
     <nav class="sumario">
         <h2>Índice</h2>
         <ol>
-            <li><a href="#introducao">1. Introdução</a></li>
-            <li><a href="#dicionario">2. Dicionário de Dados</a></li>
+            <li><a href="#introducao">1. Introdução</a>
+
+                <ol>
+                    <li class="subitem">
+                        <a href="#subitem-1">1.1 Introdução ao OPUScase</a>
+                    </li>
+                    <li>
+                        <a href="#subitem-2">1.2 Quem deve usar este manual</a>
+                    </li>
+                    <li>
+                        <a href="#subitem-3">1.3 Pré-requisitos</a>
+                    </li>
+                    <li>
+                        <a href="#subitem-4">1.4 Como Interpretar a tela de uma rotina</a>
+                    </li>
+                </ol>
+            </li>
+            <li><a href="#dicionario">2. Dicionário de Dados</a>
+                <ol>
+                    <li class="subitem">
+                        <a href="#subitem-5">2.1 Atributo</a>
+                        <ol>
+                            <li class="subitem">
+                                <a href="#subitem-6">2.1.1 Elementos da especificação de um atributo. </a>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
             <li><a href="#comandos">3. Comandos</a></li>
             <li><a href="#biblioteca">4. Biblioteca de Funções</a></li>
             <li><a href="#gerador">5. Gerador de Rotinas</a></li>
@@ -33,12 +61,18 @@
     </nav>
 
     <main>
+
         <section id="introducao">
             <h2>1. Introdução</h2>
-            <p>Este Manual destina-se a orientar o programador/analista de sistemas que irá utilizar o OPUScase para a geração de rotinas.</p>
+            <p>Este Manual destina-se a orientar o programador/analista de sistemas que irá utilizar o OPUScase para a
+                geração de rotinas.</p>
 
-            <h3>1.1 Introdução ao OPUScase</h3>
-            <p>O OPUScase é um produto do tipo I-CASE (Integrated Computer Aided Engineering). Permite aos profissionais de informática desenhar e gerar aplicações de forma rápida, fácil, segura, livre de erros de sintaxe e auto-documentada.</p>
+
+
+            <h3 id="subitem-1">1.1 Introdução ao OPUScase</h3>
+            <p>O OPUScase é um produto do tipo I-CASE (Integrated Computer Aided Engineering). Permite aos profissionais
+                de informática desenhar e gerar aplicações de forma rápida, fácil, segura, livre de erros de sintaxe e
+                auto-documentada.</p>
             <p>O OPUScase é composto de:</p>
             <ul>
                 <li>Dicionário de Dados</li>
@@ -48,33 +82,60 @@
                 <li>Gerenciador de Banco de Dados</li>
                 <li>Documentador de Manuais</li>
             </ul>
+            <h3 id="subitem-2">1.2 Quem deve usar este manual</h3>
+            <p>Este manual deve ser utilizado pelo pessoal técnico que irá desenvolver rotinas através do OPUScase.
+                servindo como fonte de consulta para diminuir eventuais duvidas que venham surgir na utilização do
+                sistema.
+                E um complemento do manual de usuário onde você irá encontrar as definições que o OPUScase utiliza.
+                Eventuais duvidas poderão ser eliminadas através da utilização de exemplos contidos no Manual "O ABC
+                do OPUScase".</p>
 
-            <h3>1.4 Como Interpretar a tela de uma rotina</h3>
-            <p>As rotinas geradas pelo OPUScase seguem a padronização SAA-CUA. Exemplo de layout:</p>
-            <pre><code>+---------------------------------------------------------------+
-| OPÇÃO  MENU  IDENTIFICA  AJUDA                                |
-+---------------------------------------------------------------+
-| PRGID: NOME DA APLICAÇÃO             TTY-DD                   |
-|                                                               |
-|  [ÁREA DE TRABALHO / LAY-OUT DA ROTINA]                       |
-|                                                               |
-|                                                               |
-+---------------------------------------------------------------+
-| Mensagem:                                                     |
-| F01=AJUDA  F03=SAÍDA  F10=AÇÃO  F12=ELIMINA                   |
-+---------------------------------------------------------------+</code></pre>
+            <h3 id="subitem-3">1.3 Pré-requisitos</h3>
+
+            <p>Para desenvolver rotinas em OPUScase, apesar de ser fácil e simples, é recomendável que você tenha o
+                conhecimento dos seguintes assuntos:
+            <ul>
+                <li>Conhecimento de Análise Orientada por Objetos</li>
+                <li>Funções Básicas de Unix</li>
+                <li>Programação em linguagem "C"</li>
+            </ul>
+            </p>
+            <h3 id="subitem-4">1.4 Como Interpretar a tela de uma rotina</h3>
+            <div>
+                <p>
+                    As rotina geradas pelo OPUScase seguem a padronização SAA-CUA (System Architeture Application -
+                    Common Users Acess). assim todas elas obedecem as definições abaixo:
+                </p>
+
+            </div>
+            <div class="imagem">
+                <img src="./img/OPUS.png" alt="img opus case">
+            </div>
+
         </section>
+
+
 
         <section id="dicionario">
             <h2>2. Dicionário de Dados</h2>
-            <p>Dicionário de Dados é o conjunto das definições e especificações dos atributos e entidades, únicos no sistema.</p>
+            <p>Dicionário de Dados é o conjunto das definições e especificações dos atributos e entidades, únicos no
+                sistema.</p>
 
-            <h3>2.1 Atributo</h3>
+            <h3 id="subitem-5">2.1 Atributo</h3>
             <p>Atributo é a designação dada a uma informação determinando o formato e suas consistências.</p>
-            
-            <h4>Elementos da especificação de um atributo:</h4>
+
+            <p>O atributo é utilizado nas definições dos registros e rotinas.
+                Um atributo é único no sistema e sua utilização está vinculada a uma determinada entidade ou rotina.
+                portanto, podemos criar um atributo que não esteja vinculado diretamente a uma entidade ou à uma rotina.
+                Na entidade os atributos aparecem na composição do registro, na formação dos índices principal e nas
+                visões.
+                Na rotina os atributos aparecem nas colunas ATRIBUTO e COMANDO dos PROCEDIMENTOS
+                LÓGICOS. bem como no campo ATRIBUTO da definição do Lay-out de Saída</p>
+
             <dl>
-                <dt>Banco</dt>
+                <dt>
+                    <h3 id="subitem-6">2.1.1 Banco</h3>
+                </dt>
                 <dd>Caractere alfabético identificador do projeto ao qual o atributo está vinculado.</dd>
 
                 <dt>Atributo</dt>
@@ -82,21 +143,103 @@
 
                 <dt>Denominação</dt>
                 <dd>Nome do atributo. Até 30 caracteres.</dd>
+                <ul class="exemplo">
+                    <li>Atributo: CODREP</li>
+                    <li>Denominação: Código do representante ou Vendedor</li>
+                </ul>
 
                 <dt>Tamanho</dt>
                 <dd>Define a quantidade de caracteres do atributo.</dd>
 
                 <dt>Fixo/Variável</dt>
                 <dd>Define o tipo de atributo fixo (F) ou variável (V).</dd>
+                <dd>Se o tipo do atributo for fixo (F). na digitação. o campo deve ser completamente preenchido.<br>
+                    Se o tipo do atributo for fixo (F) e o formato for numérico é preenchido automaticamente com zeros
+                    esquerda.<br>
+                    Se o tipo do atributo for variável (V). seja qual for o formato. é permitido digitar até o número de
+                    caracteres
+                    especificado pelo tamanho do atributo.</dd>
+
+                <dt>Default</dt>
+                <dd>Determina o conteúdo do atributo quando você digitar a tecla ENTER.</dd>
+
+                <dt>Aceitos</dt>
+                <dd>Determina quais valores que você pode digitar e quais são aceitos pelo sistema.</dd>
+                <ul class="exemplo">
+                    <li>Atributo: OPCAO</li>
+                    <li>Aceitos: 1,2,3,4</li>
+                </ul>
+                <dd>É aceito como conteúdo somente um dos valores: I ou 2 ou 3 ou ~ ou :\
+                    Se este campo for preenchido é dispensado o campo formato</dd>
 
                 <dt>Formato</dt>
-                <dd>A (Alfabético), N (Numérico), D (Data), H (Hora), E (Qualquer), V (Valor).</dd>
+                <dd>Determina o formato do conteúdo do atributo no caso de você não ter especificado o campo
+                    Aceitos.<br>
+                    Os formatos validos são:</dd>
+                <dd>
+                    <ul>
+                        <li>A (Alfabético)</li>
+                        <li>D (Data)</li>
+                        <li>E (Qualquer)</li>
+                        <li>H (Hora)</li>
+                        <li>M (Alfanumerico)</li>
+                        <li>N (Numérico)</li>
+                        <li>N,[ I [ :D ]] - para conteúdo numérico com casas decimais.</li>
+                        <ul class="exemplo">
+                            <li>I - total de posições inteiras</li>
+                            <li>D - total de posições decimais</li>
+                        </ul>
+                        <li>S (alfanuméricos e ou espaços)</li>
+                        <li>V - Para conteudo monetário</li>
+                        <li>V.[ I [D]] para conteúdo monetário com casas decimais</li>
+                        <ul class="exemplo">
+                            <li>I - total de posições inteiras</li>
+                            <li>D - total de posições decimais</li>
+                        </ul>
+
+                    </ul>
+                </dd>
+                <dd>Caso haja necessidade de estabelecer uma faixa a ser aceita pelo atributo. você deve definir os
+                    campos Valor
+                    <b>Mínimo e Valor Máximo.</b>
+                </dd>
+
+                <dt>Valor Mínimo</dt>
+                <dd>Define o menor valor aceito.</dd>
+
+                <dt>Valor Máximo</dt>
+                <dd>Define o maior valor aceito.</dd>
+
+                <dt> Sub-Rotina</dt>
+                <dd>Define o nome da subrotina pertencente fi biblioteca (libadis.a) e que é executada cm tempo de
+                    digitação do
+                    atributo.</dd>
+                <dd class="exemplo">A consistência de um campo de CGC requer algumas verificações não comuns. O campo
+                    sub-rotina
+                    permite a você especificar uma rotina (função) que faz as consistências desejadas.</dd>
+
+                <dt>Digito</dt>
+                <dd>Define o sufixo de uma rotina que tem o radical WDIG.
+                    O nome desta rotina deve pertencer a biblioteca libadis.a</dd>
+
+                <dt>Sinônimo</dt>
+                <dd>Define o(s) nome(s) do(s) atributo(s) cujo conteúdo é o mesmo do atributo digitado</dd>
+
+                <dt>Confere existência</dt>
+
+                <dd>Permite a verificação da existência de um registro no arquivo especificado.
+                    Se for encontrado. este é recuperado com todos os seus campos: caso contrário. é emitido uma
+                    mensagem
+                    de inexistência.
+                    O atributo ou os seus sinõnimos devem fazer parte do índice principal da entidade (registro)</dd>
+
             </dl>
         </section>
 
         <section id="comandos">
             <h2>3. Comandos</h2>
-            <p>A linguagem OPUScase contém inúmeros comandos que podem ser usados pelo programador na criação de rotinas. Cada comando realiza ações definidas pelos argumentos e operadores associados.</p>
+            <p>A linguagem OPUScase contém inúmeros comandos que podem ser usados pelo programador na criação de
+                rotinas. Cada comando realiza ações definidas pelos argumentos e operadores associados.</p>
 
             <h3>Relação de Comandos Principais</h3>
             <table>
@@ -144,16 +287,14 @@
             </table>
 
             <h3>Exemplo de Sintaxe: Comando SE</h3>
-            <pre><code>SE VALOR = 10
-    MENSAGEM "Valor é igual a 10"
-    FACA TOTAL = TOTAL + VALOR
-FIM</code></pre>
+
         </section>
 
         <section id="biblioteca">
             <h2>4. Biblioteca de Funções</h2>
-            <p>O OPUScase dispõe de uma biblioteca própria de funções (libadis.a) que podem ser utilizadas em uma rotina através da coluna SUBROT.</p>
-            
+            <p>O OPUScase dispõe de uma biblioteca própria de funções (libadis.a) que podem ser utilizadas em uma rotina
+                através da coluna SUBROT.</p>
+
             <ul>
                 <li><strong>UDEI:</strong> Converte data externa (DD/MM/AA) em data interna.</li>
                 <li><strong>UDIE:</strong> Converte data interna em data externa.</li>
@@ -196,4 +337,5 @@ FIM</code></pre>
     </footer>
 
 </body>
+
 </html>
