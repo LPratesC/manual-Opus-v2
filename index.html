@@ -124,13 +124,13 @@
             <h3 id="subitem-5">2.1 Atributo</h3>
             <p>Atributo é a designação dada a uma informação determinando o formato e suas consistências.</p>
 
-            <h4>O atributo é utilizado nas definições dos registros e rotinas.
+            <p>O atributo é utilizado nas definições dos registros e rotinas.
                 Um atributo é único no sistema e sua utilização está vinculada a uma determinada entidade ou rotina.
                 portanto, podemos criar um atributo que não esteja vinculado diretamente a uma entidade ou à uma rotina.
                 Na entidade os atributos aparecem na composição do registro, na formação dos índices principal e nas
                 visões.
                 Na rotina os atributos aparecem nas colunas ATRIBUTO e COMANDO dos PROCEDIMENTOS
-                LÓGICOS. bem como no campo ATRIBUTO da definição do Lay-out de Saída</h4>
+                LÓGICOS. bem como no campo ATRIBUTO da definição do Lay-out de Saída</p>
 
             <dl>
                 <dt>
@@ -143,9 +143,10 @@
 
                 <dt>Denominação</dt>
                 <dd>Nome do atributo. Até 30 caracteres.</dd>
-                <dd class="exemplo"><br>
-                    Atributo : CODREP<br>
-                    Denominação: Código do representante ou Vendedor</dd>
+                <ul class="exemplo">
+                    <li>Atributo: CODREP</li>
+                    <li>Denominação: Código do representante ou Vendedor</li>
+                </ul>
 
                 <dt>Tamanho</dt>
                 <dd>Define a quantidade de caracteres do atributo.</dd>
@@ -164,26 +165,74 @@
 
                 <dt>Aceitos</dt>
                 <dd>Determina quais valores que você pode digitar e quais são aceitos pelo sistema.</dd>
-                <dd class="exemplo"><br>
-                    Atributo: OPCAO<br>
-                    Aceitos: 1,2,3,4<br>
-                </dd>
+                <ul class="exemplo">
+                    <li>Atributo: OPCAO</li>
+                    <li>Aceitos: 1,2,3,4</li>
+                </ul>
                 <dd>É aceito como conteúdo somente um dos valores: I ou 2 ou 3 ou ~ ou :\
                     Se este campo for preenchido é dispensado o campo formato</dd>
 
                 <dt>Formato</dt>
-                <dd>Determina o formato do conteúdo do atributo no caso de você não ter especificado o campo Aceitos.<br>
-                Os formatos validos são:</dd>
+                <dd>Determina o formato do conteúdo do atributo no caso de você não ter especificado o campo
+                    Aceitos.<br>
+                    Os formatos validos são:</dd>
                 <dd>
                     <ul>
                         <li>A (Alfabético)</li>
-                        <li>N (Numérico)</li>
                         <li>D (Data)</li>
-                        <li>H (Hora)</li>
                         <li>E (Qualquer)</li>
-                        <li>V (Valor)</li>
+                        <li>H (Hora)</li>
+                        <li>M (Alfanumerico)</li>
+                        <li>N (Numérico)</li>
+                        <li>N,[ I [ :D ]] - para conteúdo numérico com casas decimais.</li>
+                        <ul class="exemplo">
+                            <li>I - total de posições inteiras</li>
+                            <li>D - total de posições decimais</li>
+                        </ul>
+                        <li>S (alfanuméricos e ou espaços)</li>
+                        <li>V - Para conteudo monetário</li>
+                        <li>V.[ I [D]] para conteúdo monetário com casas decimais</li>
+                        <ul class="exemplo">
+                            <li>I - total de posições inteiras</li>
+                            <li>D - total de posições decimais</li>
+                        </ul>
+
                     </ul>
                 </dd>
+                <dd>Caso haja necessidade de estabelecer uma faixa a ser aceita pelo atributo. você deve definir os
+                    campos Valor
+                    <b>Mínimo e Valor Máximo.</b>
+                </dd>
+
+                <dt>Valor Mínimo</dt>
+                <dd>Define o menor valor aceito.</dd>
+
+                <dt>Valor Máximo</dt>
+                <dd>Define o maior valor aceito.</dd>
+
+                <dt> Sub-Rotina</dt>
+                <dd>Define o nome da subrotina pertencente fi biblioteca (libadis.a) e que é executada cm tempo de
+                    digitação do
+                    atributo.</dd>
+                <dd class="exemplo">A consistência de um campo de CGC requer algumas verificações não comuns. O campo
+                    sub-rotina
+                    permite a você especificar uma rotina (função) que faz as consistências desejadas.</dd>
+
+                <dt>Digito</dt>
+                <dd>Define o sufixo de uma rotina que tem o radical WDIG.
+                    O nome desta rotina deve pertencer a biblioteca libadis.a</dd>
+
+                <dt>Sinônimo</dt>
+                <dd>Define o(s) nome(s) do(s) atributo(s) cujo conteúdo é o mesmo do atributo digitado</dd>
+
+                <dt>Confere existência</dt>
+
+                <dd>Permite a verificação da existência de um registro no arquivo especificado.
+                    Se for encontrado. este é recuperado com todos os seus campos: caso contrário. é emitido uma
+                    mensagem
+                    de inexistência.
+                    O atributo ou os seus sinõnimos devem fazer parte do índice principal da entidade (registro)</dd>
+
             </dl>
         </section>
 
